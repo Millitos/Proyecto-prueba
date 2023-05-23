@@ -74,3 +74,34 @@ var arrayAnidado = [['millos',23] , ['mario',18]];
 console.log(arrayAnidado[1][0]);
 arrayAnidado[1][0] = "lia";
 console.log(arrayAnidado);
+
+//agregar elementos al array
+var arrayN = ['millos','mario','lia'];
+arrayN.push(arrayAnidado); //agg los elementos al final del array
+console.log(arrayN);
+
+//pop method
+var save;
+save = arrayN.pop(); //elimina el ultimo elemento del arreglo y lo retorna
+console.log(save);
+
+//shift method
+save = arrayN.shift(); //elimina el primer elemento del arreglo y lo retorna 
+console.log(save);
+
+arrayN.unshift('jazmin'); //agg un elemento en la primera posicion del array
+console.log(arrayN);
+
+//FUNCIONES
+function showMessage(){
+    console.log('hey buddy!');
+}
+showMessage();
+
+function sum(var1,var2){
+    suma = var1 + var2;
+    return suma;
+}
+console.log(sum(3,6));
+
+console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
