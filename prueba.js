@@ -105,3 +105,54 @@ function sum(var1,var2){
 console.log(sum(3,6));
 
 console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
+
+console.log(sum("7",7)); //los convierte a string a ambos y los concatenas
+
+console.log(true && false); //and
+console.log(false||false); //or 
+console.log(!true); //not
+
+//CONDICIONALES
+//if
+var x = 5;
+if (x>7){
+    console.log('la condicion es verdadera');
+}else {
+    console.log('es falsa');
+}
+
+//else if
+function valueSort(value){
+    if (value%2 == 0){
+        console.log('is divisible by two');
+    }
+    else if (value%3 == 0) {
+        console.log('is divisible by three');
+    }
+    else{
+        console.log('Is not divisible by the options');
+}
+}
+valueSort(5);
+
+//switch
+function valueSort1(value){
+    let rta;
+    switch(value){
+        case 1:
+            rta = 'case 1';
+            break;
+        case 2:
+            rta ='case 2';
+            break;
+        case 3:
+            rta = 'case 3';
+            break;
+        default:
+            rta = 'case not supported'
+            break;
+    }
+    return rta;
+}
+
+console.log(valueSort1(4)); 
