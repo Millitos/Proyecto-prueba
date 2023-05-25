@@ -15,6 +15,13 @@ a = 10;
 var c = a;
 console.log(c)
 
+//JS STATEMENTS
+document.getElementById("demo").innerHTML = "hello dolly";
+function major(){
+    document.write("holis");
+}
+
+
 //OPEREACIONES ARTIMETICAS
 var suma = 7 + 12;
 console.log(suma);
