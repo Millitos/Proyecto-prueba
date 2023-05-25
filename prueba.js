@@ -1,4 +1,6 @@
 
+// window.alert('alert')
+
 console.log("hola mundo");
 var num = 10;
 console.log(num);
@@ -104,6 +106,7 @@ function sum(var1,var2){
 }
 console.log(sum(3,6));
 
+
 console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
 
 console.log(sum("7",7)); //los convierte a string a ambos y los concatenas
@@ -156,3 +159,5 @@ function valueSort1(value){
 }
 
 console.log(valueSort1(4)); 
+
+console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
