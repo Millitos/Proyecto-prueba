@@ -16,7 +16,7 @@ var c = a;
 console.log(c)
 
 //JS STATEMENTS
-document.getElementById("demo").innerHTML = "hello dolly";
+//document.getElementById("demo").innerHTML = "hello dolly";
 function major(){
     document.write("holis");
 }
@@ -168,3 +168,87 @@ function valueSort1(value){
 console.log(valueSort1(4)); 
 
 console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
+
+//OBJETOS
+var object = {
+    'nombre':'millos',
+    'edad':23,
+    peso:70, //se pueden omitir las comillas cuando es una sola palabra
+    'numero de telefono':'3138678393'
+};
+
+console.log(object.peso);
+console.log(object["numero de telefono"]);
+console.log(object.edad);
+
+var results = {
+    1:['millos','enrique'],
+    2:'mario',
+    3:'lucas',
+    4:'benito'
+};
+
+//acceder
+var names = 'benito';
+var position = 3;
+console.log(results[position]);
+
+//editar
+results[position] = 'andres'; 
+console.log(results[3]);
+results[1].push('jinete');
+
+//agregar
+results[5] = 'freddy';
+
+//eliminar
+delete results[3];
+
+var keys = Object.keys(results); //lista los keys
+console.log(keys);
+console.log(results);
+
+//para obtener el key pasando el value
+for(let i in results) {
+    if (results[i] == names){
+        console.log(i);
+    }
+}
+
+//Para saber si un objeto tiene una propiedad
+console.log(results.hasOwnProperty(2)); 
+
+//CICLOS
+//while
+let i=0;
+while ( i<3 ){
+    console.log('millos');
+    i++;
+}
+
+//for
+var arre = [];
+for (let i=0; i<5; i++){
+    arre.push(i);
+}
+console.log(arre);
+
+var myarray = [2,3,4,5,6];
+for (let i of myarray) { //OF toma los valores del array
+    console.log(i)
+}
+
+for (let i in myarray) {//in toma los indices o la ubicacion de los valores en el array
+    console.log(i);
+}
+
+//do while
+/*se usa cuando necesito pedir un valor al usuario y verificar si el valor
+es valido o no, pero toca pedirselo al menos una vez, luego de pedir el valor
+hay que verificar si el valor es valido, hasta que el usuario ingrese un valor 
+valido*/
+var x =16;
+do {
+    console.log(x);
+    x++;
+}while (x<10);

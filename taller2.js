@@ -52,8 +52,8 @@ function fmajor(n) {
     let name,age,major;
     
     for (let x = 0; x < n; x++) {
-        names.push(name = prompt('enter the name: '));
-        ages.push(age = prompt('enter the age: '));
+        //names.push(name = prompt('enter the name: '));
+        //ages.push(age = prompt('enter the age: '));
     }
 
     major = (ages.indexOf(Math.max(...ages)));
