@@ -247,8 +247,154 @@ for (let i in myarray) {//in toma los indices o la ubicacion de los valores en e
 es valido o no, pero toca pedirselo al menos una vez, luego de pedir el valor
 hay que verificar si el valor es valido, hasta que el usuario ingrese un valor 
 valido*/
-var x =16;
+var x =8;
 do {
     console.log(x);
     x++;
 }while (x<10);
+
+//ejercicio
+var contacts = [
+    {
+        'nombre':'Millos',
+        'apellido':'Jinete Torres',
+        'numero':'3138678393',
+        'gustos':['musica','libros']
+    },
+    {
+        'nombre':'Mario',
+        'apellido':'Torres Lugo',
+        'numero':'3138632393',
+        'gustos':'psicologia'
+    },
+    {
+        'nombre':'Lia',
+        'apellido':'Rangel Torres',
+        'numero':'3138678373',
+        'gustos':['musica','pizza']
+    }
+]
+
+function seekContacts(nombre,atri){
+    for (let i in contacts){
+        if (contacts[i].nombre === nombre) {
+            return contacts[i][atri] || `that attribute doesn't exists`; //OR 
+        }
+    }
+    return `The user ${nombre} is not in the contacts`; 
+} 
+
+console.log(seekContacts('Millos','gustos'));
+
+//generar valores aleatorios entre 0 y un valor limite superior
+function randomGenerator(boundary){
+    return Math.floor(Math.random()*boundary);
+}
+
+console.log(randomGenerator(50));
+
+//operador terniario
+function returnLower(x,y){ //devuelve el valor menor
+    return x<y ? x : y;
+}
+console.log(returnLower(6,8));
+console.log(returnLower(7,3));
+
+var k = 5;
+var l = 9;
+console.log(k > l ? k+2 : l*3);
+
+//varias condiciones con el operador terniario
+function compareNumbers(a,b) {
+    return a == b ? 'a y b son iguales'  //if
+        : a < b ? 'a es menor que b'   //else if
+        : 'a es mayor que b';          //else
+}
+console.log(compareNumbers(1,3));
+
+//mutar un arreglo definido constante
+const MY_ARRAY = [1,2,3,4];
+MY_ARRAY[0] = 5;
+MY_ARRAY[1] = 6;
+MY_ARRAY[2] = 7;
+MY_ARRAY[3] = 8;
+console.log(MY_ARRAY);
+
+//hacer un objeto inmutable
+let colores = {
+    'nombre':'millos',
+    'apellido':'jinete',
+    'apellido2':'torres'
+}
+Object.freeze(colores);
+
+//Funciones flecha
+const date = () => new Date();
+
+//con parametros
+const sumarf = (x) => x + 3;
+console.log(sumarf(2)); 
+
+const concatenadeArrays = (array1,array2) => array1.concat(array2);
+console.log(concatenadeArrays([1,2,3],[4,5,6]));
+
+//si la funcion tiene varias lineas
+const sumar = (a,b) => { //hay que mantener los corchetes
+    let num = 6;
+    return num + a + b;
+}; 
+console.log(sumar(2,3));
+
+//valores por defecto
+const incrementar = (num , valor = 1) => num + valor;
+console.log(incrementar(3)); //no es necesario poner un segundo argumento
+console.log(incrementar(3,4)); //de igual manera se puede pasar el argumento y este se edita
+
+//operador rest
+//convierte todos los argumentos en un arreglo
+function mifuncion(...args) {
+    console.log(args);
+    console.log(args.length);
+}
+//mifuncion(1,2,3,4); //se puede pasar cualquier cantidad de argumentos
+mifuncion([1,2,3],[4,5,6]);
+
+//spread
+const numeros = [1,2,3];
+const sumarr = (x,y,z) => x + y + z;
+console.log(sumarr(...numeros)); //separa los numeros individualmente para pasarlos como argumentos
+
+//sintaxis de desestructuracion
+//para poder asignar los atributos de un objeto a variables en el codigo
+const usuario = {
+    nombree:'millos enrique',
+    edadd:20
+};
+const {nombree,Edad} = usuario;
+console.log(nombree); //desestructurado
+console.log(usuario.nombree); //no desestructurado
+
+var coordenadas = {
+    xi:1,
+    yi:3,
+    zi:6
+}
+const {xi,yi,zi} = coordenadas;
+console.log(xi);
+console.log(zi);
+
+//desestructuracion objetos anidados
+const user = {
+    Millos:{
+        old:23,
+        email:'millos@hotmail.com'
+    }
+};
+const {Millos:{old,email}} = user;
+console.log(old);
+console.log(email);
+
+//para desestructurar asignando al atributo del objeto un nombre de variable nuevo
+const {Millos:{old:EDAD, email:CORREO}} = user;
+console.log(EDAD);
+console.log(CORREO);
