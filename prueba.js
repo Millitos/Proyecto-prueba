@@ -390,11 +390,145 @@ const user = {
         email:'millos@hotmail.com'
     }
 };
-const {Millos:{old,email}} = user;
+const {Millos:{old,email}} = user; //{key:{key1,key2}} = ObjectName
 console.log(old);
 console.log(email);
 
-//para desestructurar asignando al atributo del objeto un nombre de variable nuevo
+//para desestructurar el valor asignando al atributo del objeto y darle un nombre de variable nuevo
 const {Millos:{old:EDAD, email:CORREO}} = user;
 console.log(EDAD);
 console.log(CORREO);
+
+//desestructuracion de arrays
+var a;
+var b;
+var c;
+[a,b] = [1,2] //asigna valores a las variables haciendo uso de arrays
+console.log(a);
+console.log(b);
+
+//saltando posiciones
+[a,b,,, c] = [1,2,3,4,5,6]; //para poder asginar un valor del final del array a la variable c, las comas saltan posiciones
+console.log(c);
+
+//asignacion
+var a = 8;
+var b = 6;
+[b,a] = [a,b]; //asingo el valor de b a a y el valor de a a b
+console.log(a);
+console.log(b);
+
+//desestructuracion con el operador rest
+var arr;
+[a,b, ...arr] = [1,2,3,4,5,6,7,8,9]; //ignora los valores de a y b, toma el resto y lo convierte en un array
+console.log(arr);
+console.log(a,b)
+
+//desestructuracion de objeto
+var nuevoPerfilCliente = {
+    nombreee:'millos',
+    edaddd:23,
+    nacionalidad:'Espanola',
+    ubicacion:'Espana'
+};
+
+const actualizarPerfil = (informacionDePerfil) => { //funcion para desesctructurar un objeto
+    const {nombreee,edaddd,nacionalidad,ubicacion} = informacionDePerfil;
+    console.log(nombreee);
+    console.log(edaddd);
+    console.log(nacionalidad);
+    console.log(ubicacion);
+}
+actualizarPerfil(nuevoPerfilCliente);
+
+//opcion2 - de manera mas concisa
+const actualizarPerfil2 = ({nombreee,edaddd,nacionalidad,ubicacion}) =>{
+    console.log(nombreee);
+    console.log(edaddd);
+    console.log(nacionalidad);
+    console.log(ubicacion);
+}
+actualizarPerfil2(nuevoPerfilCliente);
+
+//ejercicio
+const estadisticas = {
+    max:56.78,
+    min:4.56,
+    mediana:43.4
+};
+const mitad = ({max,min}) => (max+min)/2; //desesctructura el objeto y usa los parametros para una operacion
+console.log(mitad(estadisticas));
+
+//para crear objetos de manera concisa
+const crearPersona = (Nombre, Edadd, Idioma) => ({Nombre,Edadd,Idioma}); //creo la funcion flecha para crear objetos
+var person1;          //parametros              //objeto
+person1 = crearPersona('millos',23,'espanol'); //argumentos - asigno el objeto a una variable para poder usarlo
+console.log(person1);
+
+//desestructurado
+const desestrcturarPersona = ({Nombre,Edadd,Idioma}) => { //desestructuro el objeto creado en la funcion anterior para usar sus atributos
+    return [Nombre,Edadd,Idioma]; //devuelvo una lista con los atributos para poder seleccionarlos facilmente dependiendo cual yo quiera
+}
+var Names; //creo variable para almacenar el nombre del objeto
+Names = desestrcturarPersona(person1)[0]; //guardo el nombre del objeto creado previamente
+console.log(Names);
+
+//Metodos - para declarar funciones dentro de los objetos
+const persona = {
+    nombre:'Isabel',
+    presentarse:function(){
+        return `Hola mi nombre es ${this.nombre}`; //this se refiere el objeto con el que estoy trabajando, en este caso
+    }                                              //al nombre de la persona, al nombre de ese objeto
+};
+console.log(persona.presentarse());
+
+//version corta
+const persona1 = {
+    nombre:'Isabel',
+    presentarse(){ //se quita la palabra reserva function y los :
+        return `Hola mi nombre es ${this.nombre}`; //this se refiere el objeto con el que estoy trabajando, en este caso
+    }                                              //al nombre de la persona, al nombre de ese objeto
+};
+console.log(persona.presentarse());
+
+//DEFINIR UNA CLASE
+//nos permite crear muchos objetos con la misma estructura, las mismas propiedades y la misma funcionalidad
+//nos permite escribir codigo y reutilizarlo para crear los objetos que necesitemos
+
+class Mascota {
+    constructor(nombre,edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        }
+}
+
+var miMascota = new Mascota('Lucas',9);
+var miMascota2 = new Mascota('Tobby',6);
+
+console.log(miMascota);
+console.log(miMascota.nombre);
+console.log(miMascota2.edad);
+
+//getters y setters
+//para definir funciones en una clase
+// estas funciones sirven para proteger la data del objeto
+
+class Libro {
+    constructor(autor) {
+        this._autor = autor; // el guion bajo le indica a otros desarrolladores que ese valor no se debe modificar
+    }                        // porque podria causar errores
+
+    get autor() { //funcion para obtener el valor que no queremos que se modifique
+        return this._autor;
+    }
+
+    set autor(nuevoAutor) { //funcion que permite actualizar el valor de la propiedad sin tener que cambiar el parametro del constructor
+        this._autor = nuevoAutor;
+    }
+}
+
+const livro = new Libro('Franz Kafka');
+console.log(livro.autor); //getter
+
+livro.autor = 'Nietzsche'; //setter
+console.log(livro.autor);
