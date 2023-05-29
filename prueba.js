@@ -331,6 +331,19 @@ Object.freeze(colores);
 //Funciones flecha
 const date = () => new Date();
 
+const materials = [
+    'Hydrogen',
+    'Helium',
+    'Lithium',
+    'Beryllium'
+  ];
+             //object.map(parametro => parametro.length);
+  console.log(materials.map(material => material.length));
+
+//funcion flecha con nombre
+let bob = a => a+100;
+console.log(bob(2));
+
 //con parametros
 const sumarf = (x) => x + 3;
 console.log(sumarf(2)); 
@@ -372,7 +385,16 @@ const usuario = {
 };
 const {nombree,Edad} = usuario;
 console.log(nombree); //desestructurado
+
+const edade = ({edadd}) => edadd; //desestructurado
+console.log(edade(usuario));
+
 console.log(usuario.nombree); //no desestructurado
+
+const f = () => ({
+    ciudad:"Boston"
+})
+console.log(f().ciudad);
 
 var coordenadas = {
     xi:1,
@@ -478,7 +500,7 @@ const persona = {
     nombre:'Isabel',
     presentarse:function(){
         return `Hola mi nombre es ${this.nombre}`; //this se refiere el objeto con el que estoy trabajando, en este caso
-    }                                              //al nombre de la persona, al nombre de ese objeto
+    }                                              //al nombre de la persona, al nombre de la persona de ese objeto
 };
 console.log(persona.presentarse());
 
