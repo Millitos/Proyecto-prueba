@@ -1,0 +1,16 @@
+body{
+    color: white;
+}
+
+
+.container{
+    margin-top:5px;
+    }
+.row{
+   border: solid 5px black;
+    }
+.col{
+    border: solid 3px rgb(224, 5, 5);
+    background-color: aliceblue;
+    }
+ 
