@@ -86,15 +86,36 @@
 /*elabore un programa que muestre la n-ésima potencia de varios numeros dados por el usuario
 el proceso termina cuando la base leida sea cero*/
 
-const potencia = (fbase,fn) => fbase**fn ;
+const potencia = (fbase,fn) => fbase**fn ; //flecha
 
-do {
-    var base = prompt("Enter the base number: ") 
-    if (base == 0){
-        alert("Programa terminado...");
-    }else {
-    n = prompt("enter the number power: ")
-    console.log(potencia(base,n));
-    alert(`la potencia es ${potencia(base,n)}`);
-}
-}while (base!=0);
+
+// do {
+//     var base = prompt("Enter the base number: ") 
+//     if (base == 0){
+//         alert("Programa terminado...");
+//     }else {
+//     n = prompt("enter the number power: ")
+//     console.log(potencia(base,n));
+//     alert(`la potencia es ${potencia(base,n)}`);
+// }
+// }while (base!=0);
+
+//ejercicio listas
+const arr = [[2,5,7],
+             [1,3,8],
+             [9,6,4]];
+
+
+const sortedArray = arr.flat().sort((a,b)=>a-b);
+console.log(sortedArray);
+
+var list = [];
+for (i of arr){
+    console.log(i);
+        for (j of i){
+            var sorted = j;
+            list.push(sorted);
+            
+        }
+};
+console.log(list.sort());
