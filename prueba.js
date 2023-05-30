@@ -80,14 +80,42 @@ console.log(array);
 console.log(array[1]);
 
 var arrayAnidado = [['millos',23] , ['mario',18]];
-console.log(arrayAnidado[1][0]);
-arrayAnidado[1][0] = "lia";
+console.log(arrayAnidado[1][0]); //acceder a un elemento del array
+arrayAnidado[1][0] = "lia"; //editar un elementro del array
 console.log(arrayAnidado);
 
-//agregar elementos al array
+//para saber si un objeto es un array
+console.log(Array.isArray(array)); //opcion1
+console.log(array instanceof Array); //opcion2
+
+//agregar elementos al array push
 var arrayN = ['millos','mario','lia'];
 arrayN.push(arrayAnidado); //agg los elementos al final del array
+arrayN[arrayN.length] = 'jacinto'; //tambien sirve para agregar elementos
 console.log(arrayN);
+
+const cars = [];
+cars[0]= "Saab";
+cars[1]= "Volvo";
+cars[2]= "BMW";
+console.log(cars);
+
+//crear array con la keyword 'new'
+const carss = new Array('mazda','toyota','BMW');
+console.log(carss);
+
+//toString method
+console.log(carss.toString());
+
+//objeto con metodo y funcion dentro de un array
+const sArray = new Array({1:{name:'Millos',age:23,presentarse(){return `Hola mi nombre es ${this.name}`}}},saludar = () => 'Hola!');
+console.log(sArray[0][1].name); //acceder a un elemento del objeto
+console.log(sArray[0][1].presentarse()); //accediendo al metodo
+console.log(sArray[1]()); //acceduendo a la funcion
+
+//forEach method
+const myFunction = (value) => value;
+console.log(carss.forEach(myFunction));
 
 //pop method
 var save;
@@ -336,9 +364,9 @@ const materials = [
     'Helium',
     'Lithium',
     'Beryllium'
-  ];
+];
              //object.map(parametro => parametro.length);
-  console.log(materials.map(material => material.length));
+console.log(materials.map(material => material.length));
 
 //funcion flecha con nombre
 let bob = a => a+100;
