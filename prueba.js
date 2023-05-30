@@ -1,4 +1,5 @@
 
+
 // window.alert('alert')
 
 console.log("hola mundo");
@@ -88,12 +89,21 @@ console.log(arrayAnidado);
 console.log(Array.isArray(array)); //opcion1
 console.log(array instanceof Array); //opcion2
 
-//agregar elementos al array push
+//length method
+console.log(array.length); //cantidad de elementos del array
+
+//join method 
+//es como el toString() pero le puedo especificar el caracter para separar el string
+console.log(array.join("|"))
+
+//push method - agregar elementos al array
 var arrayN = ['millos','mario','lia'];
-arrayN.push(arrayAnidado); //agg los elementos al final del array
+const arrayLength = arrayN.push(arrayAnidado); //agg los elementos al final del array
+console.log(arrayLength); //retorna la cantidad de elementos del array actualizado
 arrayN[arrayN.length] = 'jacinto'; //tambien sirve para agregar elementos
 console.log(arrayN);
 
+//se puede agregar elementos al array así sea const
 const cars = [];
 cars[0]= "Saab";
 cars[1]= "Volvo";
@@ -126,8 +136,37 @@ console.log(save);
 save = arrayN.shift(); //elimina el primer elemento del arreglo y lo retorna 
 console.log(save);
 
+//unshift method
 arrayN.unshift('jazmin'); //agg un elemento en la primera posicion del array
 console.log(arrayN);
+
+//concat method
+const arr1 = [1,2,3];
+const arr2 = new Array(4,5,6);
+//se puede concatenar incluso elementos declarados ahi mismo
+console.log(arr1.concat(arr2,"millos")); //puede tomar cualquier cantidad de arrays
+
+//flat method (plano) - toma los subArrays y los convierte en un solo arreglo en conjunto
+const myArr = [[1,2,3],[4,5,6],[7,8,9]];
+console.log(myArr.flat());
+
+//splice method (empalmar)- agrega varios elementos a un array
+const MyArr = ["millos","mario","lia"];
+        //(splice elements position, # of deleted elements, elementsToSplice)
+MyArr.splice(2,0,"Juan","Lucas");
+console.log(MyArr);
+
+//se pueden elminar elementos
+        //(start to delete,# of elements to delete)
+console.log(MyArr.splice(0,2));
+console.log(MyArr);
+
+//slice method (cortar)
+//toma los elementos desde el indice 1 hasta el indice 3(n-1) y los agg a un nuevo array
+const carBrands = ["toyota","mazda","renault","mercedes","BMW"];
+const sliceBrands = carBrands.slice(1,4); // (1,4]
+console.log(sliceBrands);
+
 
 //FUNCIONES
 function showMessage(){
