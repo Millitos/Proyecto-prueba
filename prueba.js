@@ -296,7 +296,8 @@ console.log(results[position]);
 //editar
 results[position] = 'andres'; 
 console.log(results[3]);
-results[1].push('jinete');
+results[1].push('jinete'); //agg elemento a la lista 
+console.log(results);
 
 //agregar
 results[5] = 'freddy';
@@ -304,9 +305,46 @@ results[5] = 'freddy';
 //eliminar
 delete results[3];
 
+//keys method
 var keys = Object.keys(results); //lista los keys
 console.log(keys);
 console.log(results);
+
+//values method
+/*devuelve un array con los valores de las claves enumerables del objeto proporcionado por parametro */
+var val = Object.values(results);
+console.log(val);
+
+//assign method 
+/*copia el objeto referenciado por el seguno parametro en el objeto referenciado
+en el primer parametro y lo retorna */
+var copy = {};
+Object.assign(copy,results);
+console.log(copy);
+
+//entries method
+/*devuelve un array multidimensional que contiene los pares clave valor en cada array subyacente
+Esto es util para poder iterar un objeto que, a primera vista, no parece iterable */
+var entries = Object.entries(results);
+console.log(entries);
+
+//getOwnPropertyDescriptors method
+/*devuelve un objeto con la descripcion de todas las propiedades que posee el objeto */
+var getOwnPDs = Object.getOwnPropertyDescriptors(results);
+console.log(getOwnPDs);
+
+//getOwnPropertyDescriptor method
+/*devuelve un objeto con la descripcion de la propiedad que se pasa como segundo parametro */
+var getOwnPD = Object.getOwnPropertyDescriptor(results,2);
+console.log(getOwnPD);
+
+//hasOwnProperty method
+/*devuelve un booleano si el objeto contiene la propiedad proporcionada por parametro */
+var hasOwnP = results.hasOwnProperty(1);
+console.log(hasOwnP);
+
+//getOenPropertyNames - devuelve un array con los nombres de las claves enumerables y no enumerables
+console.log(Object.getOwnPropertyNames(results));
 
 //para obtener el key pasando el value
 for(let i in results) {
@@ -317,6 +355,7 @@ for(let i in results) {
 
 //Para saber si un objeto tiene una propiedad
 console.log(results.hasOwnProperty(2)); 
+
 
 //CICLOS
 //while
