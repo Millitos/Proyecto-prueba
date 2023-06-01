@@ -29,6 +29,9 @@ const b = document.querySelectorAll("p.intro1");
 document.getElementById("demo4").innerHTML =
 'The first paragraph (index 0) with class="intro" is: ' + b[0].innerHTML;
 
+// const o = document.querySelectorAll("intro1#");
+// document.getElementById("demo4#").innerHTML = "hola" + " "+o.innerHTML;
+
 //Finding HTML Elements by HTML Object Collections
 const e = document.forms["frm1"]; //guarda los elementos del formulario en la variable e
 let text = ""; //variable vacia para recorrer el formulario y almacenar ahi los valores del mismo
@@ -68,3 +71,33 @@ const validateNumber = () =>{
         return false;
     } 
 };
+
+//crear nodos y agg al html
+const newParagraph = () => {
+    
+    //crear nodo de tipo element
+    let parrafo = document.createElement("p");
+
+    //crear nodo de tipo text
+    let contenido = document.createTextNode("Hola mundo!");
+
+    //añadir el nodo Text como hijo del nodo tipo element
+    parrafo.appendChild(contenido);
+
+    //para agregar a un elemento ya existente
+    let labelContainer = document.getElementsByClassName("divOne"); //retorna una lista siempre asi solo sea un elemento
+    containerOne = labelContainer[0]; //almaceno el div en la variable containerOne
+    containerOne.appendChild(parrafo); //a ese container le agg el parrafo
+};
+
+const deleteF = () => {
+    //para eliminar un elemento
+    let eliminado = document.getElementById("DivOne"); //obtengo los objetos creados en divOne
+    //eliminado.remove(); //elimina un elemento
+  //primerDiv.removeChild(remueve el primer elemento del primer div)
+    //eliminado[0].removeChild(eliminado[0].firstElementChild); //para borrar con getElementsByClassName
+    eliminado.removeChild(eliminado.firstElementChild)
+};
+
+
+
