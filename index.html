@@ -8,12 +8,71 @@
 </head>
 <body>
     <h1>Proyect with JavaScript and DOM</h1>
-        <p id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam dolore, numquam aperiam nisi maxime quasi autem facere provident expedita quos. Repellendus sint, expedita soluta quaerat labore dignissimos ullam incidunt quam.</p>
-    <h2 id="demo"></h2>
-    <button onclick="major()">click here</button>
 
+        <h2 id="a">getElementById</h2>
+            <p id="message"></p>
+            <p id="intro">Finding HTML elements by id</p>
+            <p id="demo0"></p>
+        
+        <h2>getEelementsByTagName</h2>
+            <p id="demo1"></p>
 
+            <div id="main">
+                <p> 2. Finding HTML Elements by Tag Name</p>
+                <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+            </div>
 
-    <script src="taller2.js"></script>
+            <p id="demo2"></p>
+    
+        <h2>getEelementsByClassName</h2>
+            <p>Finding HTML Elements by Class Name.</p>
+            <p class="intro">Hello World!</p>
+            <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+        
+            <p id="demo3"></p>
+
+        <h2>JavaScript HTML DOM</h2>
+
+            <p>Finding HTML Elements by Query Selector</p>
+            <p class="intro1">Hello World!.</p>
+            <p class="intro1">This example demonstrates the <b>querySelectorAll</b> method.</p>
+
+            <p id="demo4"></p>
+
+        <h2>JavaScript HTML DOM</h2>
+            <p>Finding HTML Elements Using <b>document.forms</b>.</p>
+            
+            <form id="frm1" action="/action_page.php">
+                First name: <input type="text" name="fname" value="Donald"><br>
+                Last name: <input type="text" name="lname" value="Duck"><br><br>
+                <input type="submit" value="Submit">
+            </form> 
+            
+            <p>These are the values of each element in the form:</p>
+            
+            <p id="demo5"></p>
+
+        <h2>JavaScript HTML DOM</h2>
+            <img id="image" src="img/aa.jpg" width="160" height="120">
+            
+            <p id="date"></p>
+            <p class="dat"></p>
+
+        <h2>JavaScript Validation</h2>
+
+            <form name="myForm" action="/action_page.php" onsubmit="return validate()" method="post">
+                Name: <input type="text" name="fname">
+                <input type="submit" value="Submit">
+            </form>
+
+            <h2>JavaScript Validation a Number</h2>
+                <form name="myForm2" action="/action_page.php" onsubmit="return validateNumber()" method="post">
+                    Number:<input type="text "name="numb">
+                    <input type="submit" value="Submit">
+                </form>
+
+                <p id="demo6"></p>
+    <script src="domPractice.js"></script>
+
 </body> 
 </html>
