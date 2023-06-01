@@ -1,4 +1,5 @@
 
+
 // window.alert('alert')
 
 console.log("hola mundo");
@@ -88,12 +89,21 @@ console.log(arrayAnidado);
 console.log(Array.isArray(array)); //opcion1
 console.log(array instanceof Array); //opcion2
 
-//agregar elementos al array push
+//length method
+console.log(array.length); //cantidad de elementos del array
+
+//join method 
+//es como el toString() pero le puedo especificar el caracter para separar el string
+console.log(array.join("|"))
+
+//push method - agregar elementos al array
 var arrayN = ['millos','mario','lia'];
-arrayN.push(arrayAnidado); //agg los elementos al final del array
+const arrayLength = arrayN.push(arrayAnidado); //agg los elementos al final del array
+console.log(arrayLength); //retorna la cantidad de elementos del array actualizado
 arrayN[arrayN.length] = 'jacinto'; //tambien sirve para agregar elementos
 console.log(arrayN);
 
+//se puede agregar elementos al array así sea const
 const cars = [];
 cars[0]= "Saab";
 cars[1]= "Volvo";
@@ -113,9 +123,16 @@ console.log(sArray[0][1].name); //acceder a un elemento del objeto
 console.log(sArray[0][1].presentarse()); //accediendo al metodo
 console.log(sArray[1]()); //acceduendo a la funcion
 
-//forEach method
-const myFunction = (value) => value;
-console.log(carss.forEach(myFunction));
+//forEach method - recorre los elementos del array
+const forE = [1,2,3,4,5];
+forE.forEach(e => {console.log(e)});
+
+//map method
+/*Devuelve un nuevo array que contiene los resultados tras
+haber sido tratados por la función que se proporciona por parámetro */
+const map = [1,2,3,4,5];
+const mappedArray = map.map(i => i*2);
+console.log(mappedArray);
 
 //pop method
 var save;
@@ -126,8 +143,63 @@ console.log(save);
 save = arrayN.shift(); //elimina el primer elemento del arreglo y lo retorna 
 console.log(save);
 
+//unshift method
 arrayN.unshift('jazmin'); //agg un elemento en la primera posicion del array
 console.log(arrayN);
+
+//concat method
+const arr1 = [1,2,3];
+const arr2 = new Array(4,5,6);
+//se puede concatenar incluso elementos declarados ahi mismo
+console.log(arr1.concat(arr2,"millos")); //puede tomar cualquier cantidad de arrays
+
+//flat method (plano) - toma los subArrays y los convierte en un solo arreglo en conjunto
+const myArr = [[1,2,3],[4,5,6],[7,8,9]];
+console.log(myArr.flat());
+
+//splice method (empalmar)- agrega varios elementos a un array
+const MyArr = ["millos","mario","lia"];
+        //(splice elements position, # of deleted elements, elementsToSplice)
+MyArr.splice(2,0,"Juan","Lucas");
+console.log(MyArr);
+
+//se pueden elminar elementos
+        //(start to delete,# of elements to delete)
+console.log(MyArr.splice(2,1)); //retorna los elementos que borra
+console.log(MyArr);
+
+//slice method (cortar)
+//toma los elementos desde el indice 1 hasta el indice 3(n-1) y los agg a un nuevo array
+const carBrands = ["toyota","mazda","renault","mercedes","BMW"];
+const sliceBrands = carBrands.slice(1,4); // (1,4]
+console.log(sliceBrands);
+
+//filter method  
+/*devuelve un array que contiene los resultados que cumplen con la función 
+indicada que se pasa como parametro*/
+const filter = ['Manzana','Banano','Kiwi','Pera'];
+let prueba = filter.filter(fff = x => x.length>4); //función - (fff = x => x.length>4);
+console.log(prueba);
+
+//indexOf method
+/*Devuelve la primera posición en la que aparezca el valor proporcionado por parametro
+si el resultado de busqueda no se encuentra retorna -1.
+El segundo parametro opcional indica desde la posición en que empieza a buscar y por defecto es 0*/ 
+const index = ['pablo','elena','adrian'];
+console.log(index.indexOf('adrian'));
+
+//lastIndexOf - devuelve la ultima posicion donde aparece el valor proporcionado
+const lastI = [1,3,4,5,1,2];
+console.log(lastI.lastIndexOf(1));
+
+//reverse method - devuelve el array en orden inverso
+console.log(lastI.reverse());
+
+//para borrar un elemento con delete
+const del = [1,2,3];
+console.log(delete(del[1])); //borro el elemento
+console.log(del); //al borrarlo deja un espacio vacío
+console.log(del.flat()); //uso flat para aplanar el array
 
 //FUNCIONES
 function showMessage(){
@@ -283,6 +355,7 @@ for(let i in results) {
 
 //Para saber si un objeto tiene una propiedad
 console.log(results.hasOwnProperty(2)); 
+
 
 //CICLOS
 //while
@@ -557,6 +630,7 @@ console.log(person1);
 const desestrcturarPersona = ({Nombre,Edadd,Idioma}) => { //desestructuro el objeto creado en la funcion anterior para usar sus atributos
     return [Nombre,Edadd,Idioma]; //devuelvo una lista con los atributos para poder seleccionarlos facilmente dependiendo cual yo quiera
 }
+
 var Names; //creo variable para almacenar el nombre del objeto
 Names = desestrcturarPersona(person1)[0]; //guardo el nombre del objeto creado previamente
 console.log(Names);
@@ -607,10 +681,12 @@ class Libro {
     }                        // porque podria causar errores
 
     get autor() { //funcion para obtener el valor que no queremos que se modifique
+        console.log("get");
         return this._autor;
     }
 
     set autor(nuevoAutor) { //funcion que permite actualizar el valor de la propiedad sin tener que cambiar el parametro del constructor
+        console.log("set");
         this._autor = nuevoAutor;
     }
 }
@@ -619,4 +695,6 @@ const livro = new Libro('Franz Kafka');
 console.log(livro.autor); //getter
 
 livro.autor = 'Nietzsche'; //setter
-console.log(livro.autor);
+ console.log(livro.autor);
+
+

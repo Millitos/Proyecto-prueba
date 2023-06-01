@@ -86,15 +86,64 @@
 /*elabore un programa que muestre la n-ésima potencia de varios numeros dados por el usuario
 el proceso termina cuando la base leida sea cero*/
 
-const potencia = (fbase,fn) => fbase**fn ;
+//const potencia = (fbase,fn) => fbase**fn ; //flecha
 
-do {
-    var base = prompt("Enter the base number: ") 
-    if (base == 0){
-        alert("Programa terminado...");
-    }else {
-    n = prompt("enter the number power: ")
-    console.log(potencia(base,n));
-    alert(`la potencia es ${potencia(base,n)}`);
+
+// do {
+//     var base = prompt("Enter the base number: ") 
+//     if (base == 0){
+//         alert("Programa terminado...");
+//     }else {
+//     n = prompt("enter the number power: ")
+//     console.log(potencia(base,n));
+//     alert(`la potencia es ${potencia(base,n)}`);
+// }
+// }while (base!=0);
+
+//ejercicio listas
+
+//generador de matrices n*m
+var matrixGen = (nRows,nColumns) => {
+    let matrix = []; //creo un array vacío que va a almacenar la matriz    
+    for (let i = 0; i < nRows; i++) { //crea una cantidad de listas dependiendo del valor pasado como argumento
+        let row =[]; //creo la lista vacía que va a almacenar los datos (columnas)
+        for (let j = 0; j<nColumns;j++) { //crea una cantidad de elementos según el numero ingresado por argumento
+            row.push(Math.floor(Math.random()*101)); //crea valores aleatorios
+        }
+        matrix.push(row); //agrego cada fila con los elementos dentro de ella a la matriz
+    }
+    return matrix;
 }
-}while (base!=0);
+
+const linealizer = matr => matr.flat().sort((a,b) => a-b); //función que toma la matriz y la linealiza
+
+const Sorted = matri => {
+    let rows = matri.length; //variable que guarda el numero de filas
+    let cols = matri[0].length; //variable que guarda el numero de columnas
+    let sort = linealizer(matri); //toma la matriz que pide como parametro y llama a la función que la linealiza
+                              //sort guarda el vector de datos como una sola línea
+
+    let newMatrix = []; //variable para almacenar la matriz ordenada
+    let index = 0;  //para recorrer el número de elementos linealizados en el vector plano
+    for(let i = 0; i < rows; i++) {
+        let row = []; //crea otra vez la cantidad de filas que tenia inicialmente la matriz
+        for (let j = 0; j < cols; j++) { //organiza nuevamente en cada fila el numero de elementos que tenia la matriz inicial 
+            row.push(sort[index]); //recorre cada elemento del vector plano y lo agrega en la fila correspondiente
+            index++;
+        }
+        if (i%2 == 0) {
+            newMatrix.push(row); //si el #fila es modulo exacto de 2 la agrega normal
+        }else {
+            newMatrix.push(row.reverse()); //si el #fila no es modulo exacto la agrega en reversa
+        }
+    }
+    return newMatrix;
+}
+
+let matrix = matrixGen(3,3);
+let sorted = Sorted(matrix);
+console.log(matrix);
+console.log(sorted);
+
+
+
