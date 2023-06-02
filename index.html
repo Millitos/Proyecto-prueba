@@ -80,8 +80,41 @@
             <button type="button" onclick="deleteF()">delete</button>
             <div id="DivOne" class="divOne"></div>
 
-            <div id="del">HOLA MUNDO</div>
+
+        <!-- If a form field (fname) is empty, the required attribute prevents 
+            this form from being submitted: -->
+        <h2>JavaScript Validation</h2>
+
+            <form action="/action_page.php" method="post">
+                <input type="text" name="fname" required>
+                <input type="submit" value="Submit">
+            </form>
             
+            <p>If you click submit, without filling out the text field,
+            your browser will display an error message.</p>
+            
+        <h2 id="test">JavaScript HTML DOM - Changing CSS</h2>
+
+        <p>This example changes the style of the HTML element with id="id1", when the user clicks a button</p>
+        <h3 id="h3">My Heading</h3>
+        <button type="button" onclick="cssChange()">Click me</button>
+
+        <h2>JavaScript HTML DOM Events</h2>
+        <h3 onclick="testF(this)">Click the text!</h3>
+
+        <p>Click the button to display the date.</p>
+        <button type="button" onclick="fDate(this)">Click to watch the date</button>
+        <br><br>
+
+        <button id="myBtn">click to watch the date</button>
+        <p id="testDate"></p>
+
+        <h2>onchange</h2>
+            Enter your name: <input type="text" id="fname" onchange="upperCase()">
+            <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+        
+        <h2>onmouseover - onmouseout</h2>
+        <div onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" style="background-color: lightgreen;justify-content: center;width: 10rem;height: 10rem;display: flex; place-items: center;"><b>Mouse Over me</b></div>
     <script src="domPractice.js"></script>
     
 </body> 

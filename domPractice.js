@@ -99,5 +99,37 @@ const deleteF = () => {
     eliminado.removeChild(eliminado.firstElementChild)
 };
 
+//changing the CSS
+document.getElementById("test").style.color = "blue";
 
+//para cambiar el color a rojo al darle click
+const cssChange = () => document.getElementById("h3").style.color = "red";
 
+//JavaScript HTML DOM Events
+const testF = id => id.innerHTML = "oops!";
+
+const fDate = id => id.innerHTML = Date();
+
+//se puede crear el evento desde js
+document.getElementById("myBtn").onclick = dDate;
+function dDate() {
+    document.getElementById("testDate").innerHTML = Date();
+}
+
+// const dDate = () => document.getElementById("testDate").innerHTML = Date();
+
+//onchange
+function upperCase() {
+    let x = document.getElementById("fname");
+    //millos =  MILLOS;
+    x.value = x.value.toUpperCase();
+};
+
+//onmouseover - onmouseout
+function mouseOver(id) {
+    id.innerHTML ="<b>" + "Hello folks" +"</b>";
+};
+
+function mouseOut(id) {
+    id.innerHTML = "<b>"+"Mouse Over me"+"</b>";
+};
