@@ -127,7 +127,7 @@ function upperCase() {
 
 //onmouseover - onmouseout
 function mouseOver(id) {
-    id.innerHTML ="<b>" + "Hello folks" +"</b>";
+    id.innerHTML =`<b>Hello folks</b>`;
 };
 
 function mouseOut(id) {
