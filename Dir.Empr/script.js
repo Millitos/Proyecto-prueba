@@ -1,18 +1,37 @@
-let add = () =>{
+const add = () =>{
     //obtengo los valores introducidos por teclado del html
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
 
-    //Creo un elemento tipo td
-    let td = document.createElement("td"); //td-table data cell element
-    let saveName = document.createTextNode(name); //toma el elemento almacenado en "name" y lo guarda en saveName como nuevo texto
-    td.appendChild(saveName); //agrega el texto como un hijo del tag td
+    let tbodyContainer = document.getElementById("tbody"); //almaceno el tag tbody donde voy a meter los tr
+    let thQuantity = document.getElementsByTagName("tr").length; //almacena la cantidad de table rows
+    let saveThQuantity = document.createTextNode(thQuantity); //pasa como texto la cantidad de tr dentro del tbody
 
-    let labelContainer = document.getElementById("tableRow"); //almacena el tag con el id "tableRow" 
-    labelContainer.appendChild(td); //agg en el tag almacenado en labelContainer el hijo td creado anteriormente
+    //creo los tags donde voy a agregar los datos de la tabla
+    //tbody-> tr -> th,td
+    let tr = document.createElement("tr");
+    let th = document.createElement("th"); //crea un table header
+    
+    //le agrego al th el numero que va a almacenar y despues agrego el th al tr
+    th.appendChild(saveThQuantity); //agg la cantidad de tr como hijo del th
+    tr.appendChild(th); //agg dentro del tr el th y el td
 
-    console.log(name);
-    console.log(email);
-    console.log(phone);
+    for (let i = 0; i<3; i++){ //para crear y llenar los 3 td
+        let list = [document.createTextNode(name),
+            document.createTextNode(email),
+            document.createTextNode(phone)];
+        var td = document.createElement("td"); //td-table data cell element
+        //agg el nombre al td y luego ese td lo agrego al tr
+        td.appendChild(list[i]);
+        tr.appendChild(td);
+    };
+
+    tbodyContainer.appendChild(tr); //agg al tag padre tbody el tr y con el tr todo lo anterior 
+};
+
+const del = () => {
+    let deleted = document.getElementsByTagName("tr");
+    let deletedQ = deleted.length - 1;
+    deleted[deletedQ].remove();
 }
