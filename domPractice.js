@@ -150,7 +150,7 @@ list.forEach(function (element) {
     //console.log(element);
 });
 
-//selectores 
+//SELECTORES
 //encontrar el primer elemento que contenga la clase button
 console.log(document.querySelector(".button"));
 
@@ -329,3 +329,63 @@ labe.textContent = "yo soy millos";
 const h = document.getElementById("pr");
 h.parentElement.insertBefore(labe,h);
 
+//ELIMINACION DE NODOS Y ELEMENTOS
+//remove method() - elimina el elemento o nodo referenciado en el DOM
+labe.remove();
+
+//removeChild() method 
+//elimina un objeto o nodo hijo proporcionado como parametro
+const la = document.createElement("label");
+la.setAttribute('class','labl');
+document.body.appendChild(la);
+//elimino el  elemento
+const del = document.body.removeChild(la); //almacena el label eliminado
+console.log(del); 
+
+//DEFINICION DE ESTILOS
+//cssText - retorna o establece una declaracion en formato string de estilos del elemento referenciado
+const form = document.querySelector(".nombre");
+console.log(form);
+console.log(form.style.cssText);
+//establece un estilo
+form.style.cssText = "background-color: red;"
+console.log(form);
+
+//setProperty method
+//styleSheets - selecciona la hoja de estilos segun cuantas hayan
+//cssRules - selecciona de la hoja de estilos el elemento referenciado por el indice
+const declaration = document.styleSheets[0].cssRules[0].style;
+console.log(declaration); //#demo0
+declaration.setProperty("background-color","yellow");
+
+//getPropertyValue method
+//permite recuperar la propiedad CSS solicitada del elemento referenciado
+console.log(declaration.getPropertyValue("font-family"));
+
+//removeProperty method
+//elimina la propiedad CSS del elemento referenciado y la retorna antes de eliminarla
+console.log(declaration.removeProperty("font-family"));
+
+//styleSheets -retorna un array con todas las hojas de estilo definidas
+console.log(document.styleSheets);
+
+
+//PROPIEDAD STYLE
+//para establecer una propiedad CSS
+document.getElementById("message").style.backgroundColor = "lightblue";
+
+//para recuperar el valor
+console.log(document.getElementById("message").style.backgroundColor);
+
+//para eliminarlo
+document.getElementById("message").style.backgroundColor = "";
+
+//insertRule method
+//recuperamos la hoja de estilo
+var s = document.styleSheets[0];
+//add la regla al final de la hoja de estilo
+s.insertRule("p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;}",s.cssRules.length);
+
+//deleteRule method
+//elimina una regla CSS de una hoja de estilos
+s.deleteRule(1); //indice - posicion
