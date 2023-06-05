@@ -698,3 +698,28 @@ livro.autor = 'Nietzsche'; //setter
  console.log(livro.autor);
 
 
+//MAPS -son los equivalentes a diccionarios
+//la diferencia entre un map y un objeto es q el map no tiene metodos
+let miMapa = new Map();
+miMapa.set('clave1','valor1');
+miMapa.set('clave2','valor2');
+miMapa.set('clave3','valor3');
+
+//obtener el tamaño del map
+console.log('el tamaño del map:' + miMapa.size)
+
+//obtener un valor del map
+console.log('valor clave2: ',miMapa.get('clave2'));
+
+//comprobar si una clave existe en el map
+console.log(miMapa.has('clave2'));
+
+//eliminar un elemento del map
+miMapa.delete('clave2');
+console.log(miMapa.size);
+
+//recorrer un map
+for (const [clave,valor] of miMapa) {
+    console.log(clave , '-', valor);
+}
+
