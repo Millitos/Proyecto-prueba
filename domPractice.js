@@ -47,6 +47,9 @@ document.getElementById("image").src = "img/calculos dimensionales.png";
 document.getElementById("date").innerHTML=
 "Date: " + Date();
 
+
+
+
 //JavaScript Form Validation
 /*If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted: */
 const validate = () => {
@@ -99,6 +102,9 @@ const deleteF = () => {
     eliminado.removeChild(eliminado.firstElementChild)
 };
 
+
+
+
 //changing the CSS
 document.getElementById("test").style.color = "blue";
 
@@ -134,6 +140,9 @@ function mouseOut(id) {
     id.innerHTML = "<b>"+"Mouse Over me"+"</b>";
 };
 
+
+
+
 //NodeList
 //devuevle una lista estatica con todos los elementos que sean hijos directos de la etiqueta body
 console.log(document.querySelectorAll("body")); 
@@ -149,6 +158,10 @@ var list = document.querySelectorAll('body > *');
 list.forEach(function (element) {
     //console.log(element);
 });
+
+
+
+
 
 //SELECTORES
 //encontrar el primer elemento que contenga la clase button
@@ -170,6 +183,9 @@ console.log(document.querySelector("#message"));
 console.log(document.querySelectorAll("h2"));
 //class name
 console.log(document.querySelectorAll(".intro"));
+
+
+
 
 //DOMTokenList
 //length propertie

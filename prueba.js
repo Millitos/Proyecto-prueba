@@ -723,3 +723,31 @@ for (const [clave,valor] of miMapa) {
     console.log(clave , '-', valor);
 }
 
+
+//SETS -conjuntos
+//en un conjunto no hay orden, no se sabe quien esta primero de cual
+const conjunto = new Set();
+
+//agg elementos
+conjunto.add('elemento1');
+conjunto.add('elemento2');
+conjunto.add('elemento3');
+conjunto.add('elemento3'); //no se agregan duplicados
+
+//tamaño del conjunto
+console.log(conjunto.size);
+
+//comprobar si el elemento existe
+console.log(conjunto.has('elemento1'));
+
+//recorrer el conjunto
+for (const elem of conjunto){
+    console.log(elem);
+}
+
+//eliminar elemento del conjunto
+conjunto.delete('elemento2');
+console.log(conjunto);
+
+//vaciar conjunto
+conjunto.clear();
