@@ -17,7 +17,7 @@
             <button class="btn btn-info" type="submit">Search</button>
           </form>
         </div>
-      </nav>
+    </nav>
 
     <!-- cuerpo pagina -->
 
@@ -57,16 +57,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-success" value="Agregar">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                    <input style="margin-top: 3px;" type="reset" class="btn btn-secondary">
+                    <input type="submit" class="btn btn-success" value="Agregar" data-action="agregar">
+                    <input type="submit" class="btn btn-danger" value="Eliminar" data-action="eliminar">
+                    <input style="margin-top: 3px;" type="reset" class="btn btn-secondary" value="Reset">
                 </div>
               </form>
 
           </div>
 
           <!-- columna1 -->
-          <div class="col-6 col-sm">
+          <div id="colunm1" class="col-6 col-sm">
             
             <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">
@@ -75,10 +75,7 @@
 
                 <div class="card-body">
                     <ul>
-                        <li id="genero">
-                            <h6>Género:</h6>
-                            Animada
-                        </li>
+                        <li id="genero"><h6>Genero:</h6>Animada</li>
                         <li id="duracion"><h6>Duración:</h6>2 horas</li>
                         <li id="director"><h6>Director:</h6>Chris Miller</li>
                       </ul>
@@ -88,8 +85,8 @@
           </div>
 
           <!-- columna2 -->
-          <div class="col-6 col-sm">
-            Column2
+          <div id="colunm2" class="col-6 col-sm">
+            
           </div>
         </div>
       </div>

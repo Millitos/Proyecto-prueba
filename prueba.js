@@ -695,7 +695,7 @@ const livro = new Libro('Franz Kafka');
 console.log(livro.autor); //getter
 
 livro.autor = 'Nietzsche'; //setter
- console.log(livro.autor);
+console.log(livro.autor);
 
 
 //MAPS -son los equivalentes a diccionarios
