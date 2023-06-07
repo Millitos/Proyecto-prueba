@@ -269,7 +269,7 @@ console.log(valueSort1(4));
 
 console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
 
-//OBJETOS
+//OBJETOS ************************************************************
 var object = {
     'nombre':'millos',
     'edad':23,
@@ -357,7 +357,7 @@ for(let i in results) {
 console.log(results.hasOwnProperty(2)); 
 
 
-//CICLOS
+//CICLOS******************************************************
 //while
 let i=0;
 while ( i<3 ){
@@ -432,7 +432,7 @@ function randomGenerator(boundary){
 
 console.log(randomGenerator(50));
 
-//operador terniario
+//operador terniario**********************************************
 function returnLower(x,y){ //devuelve el valor menor
     return x<y ? x : y;
 }
@@ -467,7 +467,7 @@ let colores = {
 }
 Object.freeze(colores);
 
-//Funciones flecha
+//Funciones flecha ********************************************************
 const date = () => new Date();
 
 const materials = [
@@ -516,7 +516,7 @@ const numeros = [1,2,3];
 const sumarr = (x,y,z) => x + y + z;
 console.log(sumarr(...numeros)); //separa los numeros individualmente para pasarlos como argumentos
 
-//sintaxis de desestructuracion
+//sintaxis de desestructuracion********************************************************
 //para poder asignar los atributos de un objeto a variables en el codigo
 const usuario = {
     nombree:'millos enrique',
@@ -544,7 +544,7 @@ const {xi,yi,zi} = coordenadas;
 console.log(xi);
 console.log(zi);
 
-//desestructuracion objetos anidados
+//desestructuracion objetos anidados*****************************************
 const user = {
     Millos:{
         old:23,
@@ -585,7 +585,7 @@ var arr;
 console.log(arr);
 console.log(a,b)
 
-//desestructuracion de objeto
+//desestructuracion de objeto**************************************************
 var nuevoPerfilCliente = {
     nombreee:'millos',
     edaddd:23,
@@ -620,7 +620,7 @@ const estadisticas = {
 const mitad = ({max,min}) => (max+min)/2; //desesctructura el objeto y usa los parametros para una operacion
 console.log(mitad(estadisticas));
 
-//para crear objetos de manera concisa
+//para crear objetos de manera concisa*************************************************
 const crearPersona = (Nombre, Edadd, Idioma) => ({Nombre,Edadd,Idioma}); //creo la funcion flecha para crear objetos
 var person1;          //parametros              //objeto
 person1 = crearPersona('millos',23,'espanol'); //argumentos - asigno el objeto a una variable para poder usarlo
@@ -635,7 +635,8 @@ var Names; //creo variable para almacenar el nombre del objeto
 Names = desestrcturarPersona(person1)[0]; //guardo el nombre del objeto creado previamente
 console.log(Names);
 
-//Metodos - para declarar funciones dentro de los objetos
+//METODOS****************************************************
+//para declarar funciones dentro de los objetos
 const persona = {
     nombre:'Isabel',
     presentarse:function(){
@@ -653,7 +654,34 @@ const persona1 = {
 };
 console.log(persona.presentarse());
 
-//DEFINIR UNA CLASE
+//ejemplo1 -metodos
+var person = {
+    nombre: "Juan",
+    edad: 30,
+    ciudad: "Madrid",
+    saludar() {
+      console.log("Hola, soy " + this.nombre + "!");
+    }
+  };
+
+console.log(person.nombre);  // Resultado: "Juan"
+console.log(person.edad);    // Resultado: 30
+console.log(person.ciudad);  // Resultado: "Madrid"
+
+person.saludar();  // Resultado: "Hola, soy Juan!"
+
+person.profesion = "Ingeniero"; //añade elemento al obj
+person.cambiarCiudad = function(nuevaCiudad) { //añade un nuevo método
+  this.ciudad = nuevaCiudad;
+};
+
+console.log(person.profesion);  // Resultado: "Ingeniero"
+//llama el nuevo metodo y pasa un argumento
+person.cambiarCiudad("Barcelona");
+console.log(person.ciudad);
+
+
+//DEFINIR UNA CLASE****************************************************************
 //nos permite crear muchos objetos con la misma estructura, las mismas propiedades y la misma funcionalidad
 //nos permite escribir codigo y reutilizarlo para crear los objetos que necesitemos
 
@@ -671,7 +699,7 @@ console.log(miMascota);
 console.log(miMascota.nombre);
 console.log(miMascota2.edad);
 
-//getters y setters
+//getters y setters**************************************************
 //para definir funciones en una clase
 // estas funciones sirven para proteger la data del objeto
 
@@ -698,7 +726,7 @@ livro.autor = 'Nietzsche'; //setter
 console.log(livro.autor);
 
 
-//MAPS -son los equivalentes a diccionarios
+//MAPS -son los equivalentes a diccionarios******************************************************
 //la diferencia entre un map y un objeto es q el map no tiene metodos
 let miMapa = new Map();
 miMapa.set('clave1','valor1');
@@ -724,7 +752,7 @@ for (const [clave,valor] of miMapa) {
 }
 
 
-//SETS -conjuntos
+//SETS -conjuntos*********************************************************
 //en un conjunto no hay orden, no se sabe quien esta primero de cual
 const conjunto = new Set();
 

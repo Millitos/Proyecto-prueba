@@ -95,7 +95,7 @@
         <h2>JavaScript Validation</h2>
 
             <form action="/action_page.php" method="post">
-                <input type="text" name="fname" required>
+                <input id="input-name" type="text" name="fname" required>
                 <input type="submit" value="Submit">
             </form>
             
@@ -116,7 +116,7 @@
         <br><br>
 
         <button id="myBtn">click to watch the date</button>
-        <p id="testDate"></p>
+        <p id="testDate" class="prueba" style="background-color: limegreen;"></p>
 
         <h2>onchange</h2>
             Enter your name: <input type="text" id="fname" onchange="upperCase()">

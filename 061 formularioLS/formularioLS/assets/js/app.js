@@ -45,7 +45,8 @@ function borrarTweet(e) {
     e.preventDefault();
 
     if(e.target.classList.contains('borrar-tweet')){
-        listTweets = document.querySelectorAll('.borrar-tweet');
+        //listTweets = document.querySelectorAll('.borrar-tweet');
+        //console.log(e.target);
         e.target.parentElement.remove();
         alert('Tweet eliminado!');
     }

@@ -405,3 +405,12 @@ s.insertRule("p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS
 //deleteRule method
 //elimina una regla CSS de una hoja de estilos
 s.deleteRule(1); //indice - posicion
+
+
+//HTMLElemenet interfaz*******************************************
+
+//devuelve los atributos de un elemento
+console.log(document.querySelector('#testDate').attributes);
+
+//devuelve o establece el nombre del elemento
+console.log(document.querySelector('#input-name').name);

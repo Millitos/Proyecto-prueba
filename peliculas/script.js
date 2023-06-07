@@ -78,7 +78,7 @@ formulary.addEventListener('submit',function(e){ //evento de enviar
         //e.target - referencia el objeto sobre el que se ha enviado el evento
         //formData - crea un nuevo objeto formData que representa los datos del formulario HTML
         let data = Object.fromEntries(new FormData(e.target));
-        //console.log(data);
+        console.log(data);
 
         //llamo la funcion que convierte el objeto a map
         let map = setMap(data);
