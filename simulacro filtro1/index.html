@@ -27,7 +27,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Clientes</a>
+						<a href="#header-clientes" class="nav-link active" aria-current="page" href="#">Clientes</a>
 					</li>
 
 					<li class="nav-item">
@@ -51,83 +51,90 @@
 	</nav>
 	<!-- navbar -->
 
-	<div class="container text-center">
-		<div class="row container">
+	<section>
+		<header id="header-clientes" class="text-center">
+			<h1>Clientes</h1>
+		</header>
 
-			<!-- formulario -->
-			<div class="col-sm-12 col-md-4">
-				<form id="form-clientes">
-					<div class="mb-3">
-						<label for="nit" class="form-label">NIT</label>
-						<input type="number" name="nit" class="form-control" id="nit"  name="nit" >
-					</div>
-					<div class="mb-3">
-						<label for="nombres" class="form-label">Nombres</label>
-						<input type="text" class="form-control" id="nombres" name="nombres" >
-					</div>
-					<div class="mb-3">
-						<label for="apellidos" class="form-label">Apellidos</label>
-						<input type="text" class="form-control" id="apellidos"  name="apellidos" >
-					</div>
-					<div class="mb-3">
-						<label for="telefono" class="form-label">Telefono</label>
-						<input type="number" class="form-control" id="telefono" name="telefono" >
-					</div>
-					<div class="mb-3">
-						<label for="email" class="form-label">Correo Electronico</label>
-						<input type="email" class="form-control" id="email"  name="email" >
-					</div>
-					<div class="mb-3">
-						<label for="birth" class="form-label">Fecha de nacimiento</label>
-						<input type="date" class="form-control" id="birth" name="birth" >
-					</div>
-					<div class="mb-3">
-						<label for="nacionalidad" class="form-label">Nacionalidad</label>
-						<input type="text" class="form-control" id="nacionalidad" name="nacionalidad" >
-					</div>
-					
-					<!-- botones -->
-					<input type="submit" class="btn btn-outline-success" value="Agregar" data-action="agregar">
-					<input id="btn-eliminar-cliente" type="submit" class="btn btn-outline-danger" value="Eliminar" data-action="eliminar">
-					<br>
-					<br>
-					<input type="submit" class="btn btn-outline-info" value="Listar" data-action="listar">
-					<input id="btn-modificar-cliente" type="submit" class="btn btn-outline-secondary" value="Modificar" data-action="modificar">
-				</form>
-			</div>
+		<div class="container text-center">
+			<div class="row container">
 
-			<!-- table -->
-			<div id="table-clientes" class="col-sm-12 col-md-8  ">
-				<table class="table table-hover table-success table-striped">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">NIT</th>
-							<th scope="col">Nombres</th>
-							<th scope="col">Apellidos</th>
-							<th scope="col">Teléfono</th>
-							<th scope="col">Email</th>
-							<th scope="col">Fecha de nacimiento</th>
-							<th scope="col">Nacionalidad</th>
-						</tr>
-					</thead>
-					<tbody id="tbody-clientes">
-						<tr class="table-active">
-							<th id="th-clientes" scope="row">1</th>
-							<td>123</td>
-							<td>Mark</td>
-							<td>Laso</td>
-							<td>3221224</td>
-							<td>jj@email.com</td>
-							<td>2022-05-06</td>
-							<td>Col</td>
-						</tr>
-					</tbody>
-				</table>
+				<!-- formulario -->
+				<div class="col-sm-12 col-md-4">
+					<form id="form-clientes">
+						<div class="mb-3">
+							<label for="nit" class="form-label">NIT</label>
+							<input type="number" name="nit" class="form-control" id="nit"  name="nit" >
+						</div>
+						<div class="mb-3">
+							<label for="nombres" class="form-label">Nombres</label>
+							<input type="text" class="form-control" id="nombres" name="nombres" >
+						</div>
+						<div class="mb-3">
+							<label for="apellidos" class="form-label">Apellidos</label>
+							<input type="text" class="form-control" id="apellidos"  name="apellidos" >
+						</div>
+						<div class="mb-3">
+							<label for="telefono" class="form-label">Telefono</label>
+							<input type="number" class="form-control" id="telefono" name="telefono" >
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Correo Electronico</label>
+							<input type="email" class="form-control" id="email"  name="email" >
+						</div>
+						<div class="mb-3">
+							<label for="birth" class="form-label">Fecha de nacimiento</label>
+							<input type="date" class="form-control" id="birth" name="birth" >
+						</div>
+						<div class="mb-3">
+							<label for="nacionalidad" class="form-label">Nacionalidad</label>
+							<input type="text" class="form-control" id="nacionalidad" name="nacionalidad" >
+						</div>
+						
+						<!-- botones -->
+						<input type="submit" class="btn btn-outline-success" value="Agregar" data-action="agregar">
+						<input id="btn-eliminar-cliente" type="submit" class="btn btn-outline-danger" value="Eliminar" data-action="eliminar">
+						<br>
+						<br>
+						<input type="submit" class="btn btn-outline-info" value="Listar" data-action="listar">
+						<input id="btn-modificar-cliente" type="submit" class="btn btn-outline-secondary" value="Modificar" data-action="modificar">
+						<input id="btn-reset-cliente" type="submit" class="btn btn-outline-secondary" value="Reset" data-action="reset">
+					</form>
+				</div>
+
+				<!-- table -->
+				<div id="table-clientes" class="col-sm-12 col-md-8  ">
+					<table class="table table-hover table-success table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">NIT</th>
+								<th scope="col">Nombres</th>
+								<th scope="col">Apellidos</th>
+								<th scope="col">Teléfono</th>
+								<th scope="col">Email</th>
+								<th scope="col">Fecha de nacimiento</th>
+								<th scope="col">Nacionalidad</th>
+							</tr>
+						</thead>
+						<tbody id="tbody-clientes">
+					   <!-- <tr class="table-active">
+								<th id="th-clientes" scope="row">1</th>
+								<td>123</td>
+								<td>Mark</td>
+								<td>Laso</td>
+								<td>3221224</td>
+								<td>jj@email.com</td>
+								<td>2022-05-06</td>
+								<td>Col</td>
+								
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-	</div>
-
+	</section>
 
 
 	<!-- bootstrap -->

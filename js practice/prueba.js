@@ -75,7 +75,7 @@ console.log(nombre.length);
 console.log(nombre[1]);
 console.log(nombre[(nombre.length)-1]); //acceder al último caracter
 
-//ARRAYS
+//ARRAYS***************************************************************************
 var array = ['millos', 23];
 console.log(array);
 console.log(array[1]);
@@ -269,7 +269,7 @@ console.log(valueSort1(4));
 
 console.log(JSON.stringify(arrayN)); //muestra el arreglo mas kiut 
 
-//OBJETOS ************************************************************
+//OBJETOS *****************************************************************
 var object = {
     'nombre':'millos',
     'edad':23,
