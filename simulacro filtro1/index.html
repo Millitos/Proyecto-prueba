@@ -164,7 +164,7 @@
 							</tr>
 						</thead>
 						<tbody id="tbody-rutas">
-							<tr>
+							<!-- <tr>
 								<th id="th-rutas" scope="row">1</th>
 								<td>Bucaramanga-Bogotá</td>
 								<td>Bucaramanga</td>
@@ -173,7 +173,7 @@
 								<td>COP 169.999</td>
 								<td class="pr del"><i class="bi bi-trash3-fill"></i></td>
 
-							</tr>
+							</tr> -->
 						</tbody>
 					</table>
 				</div>
@@ -193,8 +193,18 @@
 				<div id="form-tiquetes" class="col">
 
 					<div class="input-group mb-3">
-						<label class="input-group-text" for="list-clientes">Options</label>
+						<label class="input-group-text" for="list-clientes">Clientes</label>
 						<select class="form-select" id="list-clientes">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</div>
+
+					<div class="input-group mb-3">
+						<label class="input-group-text" for="list-rutas">Rutas</label>
+						<select class="form-select" id="list-rutas">
 							<option selected>Choose...</option>
 							<option value="1">One</option>
 							<option value="2">Two</option>

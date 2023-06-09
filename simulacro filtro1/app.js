@@ -43,12 +43,21 @@ formulario.addEventListener('submit', function (e) {
                                 <td>${data.nacionalidad}</td>`;
             document.querySelector('#tbody-clientes').appendChild(tr);
             formulario.reset();
-            person.push(data);
+            person.push(data); //envia el objeto con los datos del form a la lista de personas
 
+            //pasa los nombres y apellidos ingresados en el formulario a la funcion
+            //que los agrega al dropdownlist del modulo de tiquetes
+            aggClienteTiq(data.nombres,data.apellidos);
             
             break;
 
         case 'eliminar':
+
+            //funcion que elimina el cliente del dropdownlist del modulo de tiquetes
+            //cuando se elimina tambien de la tabla, lo elimina pasandole los nombres
+            //que se obtienen con el indice del objeto en la lista de objetos
+            delClienteTiq(person[index()].nombres,person[index()].apellidos);
+
             //elimina el elemento de la lista que los contiene pasandole el indice
             delete(person[index()]);
             person = person.flat();
@@ -60,6 +69,7 @@ formulario.addEventListener('submit', function (e) {
             delBtn.classList.add('display'); //oculta de nuevo el boton eliminar
             modBtn.classList.add('display');//ocutla
             formulario.reset();
+            
             break;
 
         case 'modificar':
@@ -200,6 +210,7 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
                             <td class="pr del"><i class="bi bi-trash3-fill"></i></td>`;
         document.querySelector('#tbody-rutas').appendChild(trRutas);//agg el tr al tbody
         rutas.push(objRutasCreator(idRutas,origen,destino,puntos,valor));
+        addRutaTiq(origen,destino,idRutas);
     }
 
     //eliminar
@@ -211,18 +222,26 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
         }else{
             alert('operacion cancelada!')
         }
-        let idClickedElement = elem.parentElement.parentElement.children[0].innerHTML;
-        //console.log(idClickedElement);
 
-        for (let i = 0; i < rutas.length; i++) { //i toma los indices de la lista
-            let object = rutas[i]; //segun el indice recorre los objetos
-            if (object.id == idClickedElement) {
-                //console.log(object.id);
-                let inddx = i;
-                delete(rutas[inddx]);
-                rutas = rutas.flat();
-            }
-        }
+        //guarda el id del elemento clickeado
+        let idClickedElement = elem.parentElement.parentElement.children[0].innerHTML;
+        
+        //elimina de la lista el elemento con el indice clickeado menos 1
+        //los id empiezan desde 1 en la tabla de rutas y siempre van aumentando
+        //y al agg a la lista las rutas empiezan desde 0, por eso se resta 1
+        delete(rutas[idClickedElement - 1]);
+        rutas = rutas.flat();
+        console.log(rutas);
+
+        // for (let i = 0; i < rutas.length; i++) { //i toma los indices de la lista
+        //     let object = rutas[i]; //segun el indice recorre los objetos
+        //     if (object.id == idClickedElement) {
+        //         //console.log(object.id);
+        //         let inddx = i;
+        //         delete(rutas[inddx]);
+        //         rutas = rutas.flat();
+        //     }
+        // }
 
     }
 })
@@ -238,16 +257,42 @@ const objRutasCreator = (id,origen,destino,puntos,valor) => ({id,origen,destino,
 
 //MODULO 3********************************************************************
 //variables
-
-
+var selectClientes = document.querySelector("#list-clientes");
+var selectRutas = document.querySelector("#list-rutas");
 
 //eventListeners
 
 
-
 //funciones
+//toma el nombre y el apellido, crea un tag tipo option y le agrega los arg pasados
+function aggClienteTiq(clienteName,clienteApellido){
+    let opt = document.createElement('option');
+    opt.textContent = clienteName +" "+ clienteApellido;
+    selectClientes.appendChild(opt); //agg al select el option con los nombres del cliente
+}
 
+//toma el nombre y el apellido traidos del caso eliminar del evento
+function delClienteTiq(clienteName,clienteApellido){
+    for(let i of selectClientes.children){ //recorre los option
+        //si en el texto de unos de esos option se encuentra el nombre y el apellido
+        //de un cliente que ya habia sido agg, lo elimina
+        if(clienteName +" "+ clienteApellido === i.innerHTML){ 
+            i.remove(); //elimina el elemento
+        }
+    }
+}
 
+function addRutaTiq(rutOrigen,rutDestino,id){
+    let opt = document.createElement('option');
+    opt.textContent =`${rutOrigen}-${rutDestino}`;
+    opt.setAttribute('id',id);
+    selectRutas.appendChild(opt);
+}
 
+//debo comparar el id del elemento clickeado con el id de los elementos dentro del select
+function delRutaTiq(idRutas){
+    if( idRutas === ){
 
+    }
+}
 //MODULO 3********************************************************************
