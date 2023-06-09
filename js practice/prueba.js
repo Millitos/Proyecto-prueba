@@ -201,7 +201,7 @@ console.log(delete(del[1])); //borro el elemento
 console.log(del); //al borrarlo deja un espacio vacío
 console.log(del.flat()); //uso flat para aplanar el array
 
-//FUNCIONES
+//FUNCIONES***************************************************************************************
 function showMessage(){
     console.log('hey buddy!');
 }
@@ -222,7 +222,7 @@ console.log(true && false); //and
 console.log(false||false); //or 
 console.log(!true); //not
 
-//CONDICIONALES
+//CONDICIONALES*****************************************************************************
 //if
 var x = 5;
 if (x>7){
@@ -357,7 +357,7 @@ for(let i in results) {
 console.log(results.hasOwnProperty(2)); 
 
 
-//CICLOS******************************************************
+//CICLOS*********************************************************************************
 //while
 let i=0;
 while ( i<3 ){
@@ -432,7 +432,7 @@ function randomGenerator(boundary){
 
 console.log(randomGenerator(50));
 
-//operador terniario**********************************************
+//operador terniario**************************************************************
 function returnLower(x,y){ //devuelve el valor menor
     return x<y ? x : y;
 }
@@ -467,7 +467,7 @@ let colores = {
 }
 Object.freeze(colores);
 
-//Funciones flecha ********************************************************
+//Funciones flecha ******************************************************************
 const date = () => new Date();
 
 const materials = [

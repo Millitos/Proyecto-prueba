@@ -1,3 +1,23 @@
 .display{
     display: none;
 }
+
+.pr{
+    transition: all 0.3s;
+}
+.pr:hover{
+    transform: scale(1.1);
+}
+/* .row{
+    background-color: lightcyan;
+} */
+.border{
+    background-color: lightcyan;
+}
+
+.table{
+    margin: 3px;
+}
+#table-clientes{
+    background-color:rgb(197, 248, 248) ;
+}

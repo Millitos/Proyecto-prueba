@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="style.css">
 	<title>Travel EXP</title>
 </head>
@@ -17,7 +18,7 @@
 	<nav data-bs-theme="dark" class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 
-			<a class="navbar-brand" href="#">logo</a>
+			<a class="navbar-brand" href="#"><i class="bi bi-airplane"></i></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -27,11 +28,11 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a href="#header-clientes" class="nav-link active" aria-current="page" href="#">Clientes</a>
+						<a href="#header-clientes" class="nav-link active" aria-current="page" >Clientes</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link active" href="#">Rutas</a>
+						<a class="nav-link active" href="#header-rutas">Rutas</a>
 					</li>
 
 					<li class="nav-item">
@@ -60,7 +61,7 @@
 			<div class="row container">
 
 				<!-- formulario -->
-				<div class="col-sm-12 col-md-4">
+				<div class="col-sm-12 col-md-4 border border-4">
 					<form id="form-clientes">
 						<div class="mb-3">
 							<label for="nit" class="form-label">NIT</label>
@@ -103,8 +104,8 @@
 				</div>
 
 				<!-- table -->
-				<div id="table-clientes" class="col-sm-12 col-md-8  ">
-					<table class="table table-hover table-success table-striped">
+				<div id="table-clientes" class="col-sm-12 col-md-8  border border-4">
+					<table class="table table-hover table-success table-striped margin:2px">
 						<thead>
 							<tr>
 								<th scope="col">#</th>
@@ -118,7 +119,7 @@
 							</tr>
 						</thead>
 						<tbody id="tbody-clientes">
-					   <!-- <tr class="table-active">
+					    <!-- <tr class="table-active">
 								<th id="th-clientes" scope="row">1</th>
 								<td>123</td>
 								<td>Mark</td>
@@ -135,7 +136,47 @@
 			</div>
 		</div>
 	</section>
+	<br>
+	<br>
+	<br>
+	<section>
+		<header id="header-rutas" class="text-center">
+			<h1>Gestion de rutas aereas</h1>
+		</header>
 
+		<div class="container text-center">
+			<div class="row">
+				<!-- table -->
+				<div id="table-rutas" class="col">
+					<table class="table table-hover table-success table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Ruta</th>
+								<th scope="col">Origen</th>
+								<th scope="col">Destino</th>
+								<th scope="col">Puntos</th>
+								<th scope="col">Valor</th>
+								<th class="pr agg" scope="col"><i class="bi bi-plus-square-fill"></i></th>
+							</tr>
+						</thead>
+						<tbody id="tbody-rutas">
+					    	<tr>
+								<th id="th-rutas" scope="row">1</th>
+								<td>nombre ruta</td>
+								<td>Bucaramanga</td>
+								<td>Bogota</td>
+								<td>20</td>
+								<td>COP 169.999</td>
+								<td class="pr del"><i class="bi bi-trash3-fill"></i></td>
+									
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

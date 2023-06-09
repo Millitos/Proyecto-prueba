@@ -1,3 +1,5 @@
+//MODULO 1 -- CLIENTES******************************************************************************
+
 //variables**************************************************
 var formulario = document.querySelector('#form-clientes'); //obtener el formulario
 var tableClientes = document.getElementById('tbody-clientes'); //obtener el body de la tabla
@@ -149,8 +151,8 @@ tableClientes.addEventListener('click', function (e) {
 //funciones**************************************************
 
 //codigo para recorrer el arreglo de objetos
-            //codigo para devolver el indice segun el elemento seleccionado del html
-            //a partir del indice del objeto puedo manejar la lista que me va a almacenar los cambios que se hagan
+//codigo para devolver el indice segun el elemento seleccionado del html
+//a partir del indice del objeto puedo manejar la lista que me va a almacenar los cambios que se hagan
 function index(){
     for (let i = 0; i < person.length; i++) { //i toma los indices de la lista
         let object = person[i]; //segun el indice recorre los objetos
@@ -162,3 +164,71 @@ function index(){
     return indx;
 }
 
+//MODULO 1 -- CLIENTES******************************************************************************
+
+
+//MODULO 2 -- RUTAS AEREAS******************************************************************************
+//variables
+var rutas = []; //lista para almacenar las rutas agregadas
+var tableRutas = document.querySelector('#table-rutas');//guarda la tabla completa de las rutas
+var idRutas = 0; //contador inicializado en cero para asignar id a los tr
+
+//eventListeners
+tableRutas.addEventListener('click',function(e){ //evento que se activa al dar click en la tabla
+    e.preventDefault();
+
+    //guardo el elemento sobre el que se dio click
+    let elem = e.target;
+
+    //agregar
+    if(elem.classList.contains("bi-plus-square-fill")){ //si dan click encima del icono de agg
+        idRutas++; //suma 1 al id del tr 
+        //pide la informacion para agg
+        let ruta = prompt('ingrese el nombre de la ruta');
+        let origen = prompt('ingrese el origen');
+        let destino = prompt('ingrese el destino');
+        let puntos = parseInt(prompt('ingrese el # de puntos'));
+        let valor = prompt('ingrese el valor');
+        let trRutas = document.createElement('tr'); //crea el tr
+        trRutas.setAttribute('id',`trRutas${idRutas}`); //le asigna id 'trRutas1'....
+        trRutas.innerHTML = `<th id="th-rutas" scope="row">${idRutas}</th>
+                            <td>${ruta}</td>
+                            <td>${origen}</td>
+                            <td>${destino}</td>
+                            <td>${puntos}</td>
+                            <td>COP ${valor}</td>
+                            <td class="pr del"><i class="bi bi-trash3-fill"></i></td>`;
+        document.querySelector('#tbody-rutas').appendChild(trRutas);//agg el tr al tbody
+        rutas.push(objRutasCreator(idRutas,ruta,origen,destino,puntos,valor));
+    }
+
+    //eliminar
+    if(elem.classList.contains("bi-trash3-fill")){//si pulsan en el icono de la basura
+        let ask = confirm('Desea eliminar la ruta?') //alert para confirmar
+        if (ask){ //si pulsan aceptar == true
+            elem.parentElement.parentElement.remove();
+            alert('ruta eliminada!');
+        }else{
+            alert('operacion cancelada!')
+        }
+        let idClickedElement = elem.parentElement.parentElement.children[0].innerHTML;
+        //console.log(idClickedElement);
+
+        for (let i = 0; i < rutas.length; i++) { //i toma los indices de la lista
+            let object = rutas[i]; //segun el indice recorre los objetos
+            if (object.id == idClickedElement) {
+                //console.log(object.id);
+                let inddx = i;
+                delete(rutas[inddx]);
+                rutas = rutas.flat();
+            }
+        }
+
+    }
+})
+
+
+//funciones
+//para crear objetos
+                        //parametros                                //objeto
+const objRutasCreator = (id,ruta,origen,destino,puntos,valor) => ({id,ruta,origen,destino,puntos,valor});
