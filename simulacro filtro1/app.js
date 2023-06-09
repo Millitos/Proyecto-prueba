@@ -184,7 +184,7 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
     if(elem.classList.contains("bi-plus-square-fill")){ //si dan click encima del icono de agg
         idRutas++; //suma 1 al id del tr 
         //pide la informacion para agg
-        let ruta = prompt('ingrese el nombre de la ruta');
+        // let ruta = prompt('ingrese el nombre de la ruta');
         let origen = prompt('ingrese el origen');
         let destino = prompt('ingrese el destino');
         let puntos = parseInt(prompt('ingrese el # de puntos'));
@@ -192,14 +192,14 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
         let trRutas = document.createElement('tr'); //crea el tr
         trRutas.setAttribute('id',`trRutas${idRutas}`); //le asigna id 'trRutas1'....
         trRutas.innerHTML = `<th id="th-rutas" scope="row">${idRutas}</th>
-                            <td>${ruta}</td>
+                            <td>${origen}-${destino}</td>
                             <td>${origen}</td>
                             <td>${destino}</td>
                             <td>${puntos}</td>
                             <td>COP ${valor}</td>
                             <td class="pr del"><i class="bi bi-trash3-fill"></i></td>`;
         document.querySelector('#tbody-rutas').appendChild(trRutas);//agg el tr al tbody
-        rutas.push(objRutasCreator(idRutas,ruta,origen,destino,puntos,valor));
+        rutas.push(objRutasCreator(idRutas,origen,destino,puntos,valor));
     }
 
     //eliminar
@@ -231,4 +231,23 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
 //funciones
 //para crear objetos
                         //parametros                                //objeto
-const objRutasCreator = (id,ruta,origen,destino,puntos,valor) => ({id,ruta,origen,destino,puntos,valor});
+const objRutasCreator = (id,origen,destino,puntos,valor) => ({id,origen,destino,puntos,valor});
+
+
+//MODULO 2***************************************************************
+
+//MODULO 3********************************************************************
+//variables
+
+
+
+//eventListeners
+
+
+
+//funciones
+
+
+
+
+//MODULO 3********************************************************************
