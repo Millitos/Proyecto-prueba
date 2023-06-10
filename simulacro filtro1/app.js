@@ -225,13 +225,14 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
 
         //guarda el id del elemento clickeado
         let idClickedElement = elem.parentElement.parentElement.children[0].innerHTML;
-        
+        console.log(idClickedElement);
         //elimina de la lista el elemento con el indice clickeado menos 1
         //los id empiezan desde 1 en la tabla de rutas y siempre van aumentando
         //y al agg a la lista las rutas empiezan desde 0, por eso se resta 1
         delete(rutas[idClickedElement - 1]);
         rutas = rutas.flat();
-        console.log(rutas);
+        delRutaTiq(idClickedElement);
+        
 
         // for (let i = 0; i < rutas.length; i++) { //i toma los indices de la lista
         //     let object = rutas[i]; //segun el indice recorre los objetos
@@ -291,8 +292,12 @@ function addRutaTiq(rutOrigen,rutDestino,id){
 
 //debo comparar el id del elemento clickeado con el id de los elementos dentro del select
 function delRutaTiq(idRutas){
-    if( idRutas === ){
-
+    for(let i of selectRutas.children){
+        console.log(i.id);
+        if(idRutas == i.id){
+            i.remove(); //elimina el elemento
+        }
     }
 }
+
 //MODULO 3********************************************************************
