@@ -21,3 +21,9 @@
 #table-clientes{
     background-color:rgb(197, 248, 248) ;
 }
+
+#cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}

@@ -73,8 +73,7 @@ formulario.addEventListener('submit', function (e) {
             break;
 
         case 'modificar':
-            
-            
+            delClienteTiq(person[index()].names,person[index()].apellidos); //esto debo arreglarlo!!
             //crea un objeto con los nuevos datos ingresados y lo agg a la lista de objetos
             //en la misma posicion donde se habia creado inicialmente 
             let newData = Object.fromEntries(new FormData(e.target));
@@ -93,6 +92,8 @@ formulario.addEventListener('submit', function (e) {
             delBtn.classList.add('display'); //oculta de nuevo el boton eliminar
             modBtn.classList.add('display');//ocutl
             formulario.reset();
+            aggClienteTiq(newData.nombres,newData.apellidos);
+            
             break;
 
         case 'listar':
@@ -197,7 +198,7 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
         // let ruta = prompt('ingrese el nombre de la ruta');
         let origen = prompt('ingrese el origen');
         let destino = prompt('ingrese el destino');
-        let puntos = parseInt(prompt('ingrese el # de puntos'));
+        let puntos = parseFloat(prompt('ingrese el # de puntos'));
         let valor = prompt('ingrese el valor');
         let trRutas = document.createElement('tr'); //crea el tr
         trRutas.setAttribute('id',`trRutas${idRutas}`); //le asigna id 'trRutas1'....
@@ -225,13 +226,14 @@ tableRutas.addEventListener('click',function(e){ //evento que se activa al dar c
 
         //guarda el id del elemento clickeado
         let idClickedElement = elem.parentElement.parentElement.children[0].innerHTML;
-        console.log(idClickedElement);
+        
+        delRutaTiq(idClickedElement);
         //elimina de la lista el elemento con el indice clickeado menos 1
         //los id empiezan desde 1 en la tabla de rutas y siempre van aumentando
         //y al agg a la lista las rutas empiezan desde 0, por eso se resta 1
         delete(rutas[idClickedElement - 1]);
-        rutas = rutas.flat();
-        delRutaTiq(idClickedElement);
+        //rutas = rutas.flat();
+        
         
 
         // for (let i = 0; i < rutas.length; i++) { //i toma los indices de la lista
@@ -260,6 +262,9 @@ const objRutasCreator = (id,origen,destino,puntos,valor) => ({id,origen,destino,
 //variables
 var selectClientes = document.querySelector("#list-clientes");
 var selectRutas = document.querySelector("#list-rutas");
+var inpValor = document.querySelector('#valor-tiq');
+var cards = document.querySelector('#cards-container');
+var tbodyFide = document.querySelector('#tbody-fide');
 
 //eventListeners
 
@@ -287,6 +292,7 @@ function addRutaTiq(rutOrigen,rutDestino,id){
     let opt = document.createElement('option');
     opt.textContent =`${rutOrigen}-${rutDestino}`;
     opt.setAttribute('id',id);
+    opt.classList.add('test');
     selectRutas.appendChild(opt);
 }
 
@@ -299,5 +305,111 @@ function delRutaTiq(idRutas){
         }
     }
 }
+//el error es pq estoy activando el evento click y entra al condicional porque
+//ya tengo unos option dentro del select con la clase test
+//y estoy dando click en el select, por lo tando clickedOpt no recibe ningun id
 
+//evento que muestra el valor de la ruta segun se da click en la ruta de los options dentro del select
+selectRutas.onclick = function(e){
+    //console.log(selectRutas.options.length);
+    if (selectRutas.options.length -1 == 0){ //lista de elementos hijos del select
+        alert('No hay rutas agregadas...');
+    }
+    //console.log(e.target.children[1].classList);
+    if(e.target.children[1].classList.contains('test')){
+          //select.options devuelve una coleccion de todas las opciones dentro del elemento select
+    //select.selectedIndex - es una propiedad que devuelve el indice de la opcion seleccionada en 
+                            //el elemento select
+        let clickedOpt = selectRutas.options[selectRutas.selectedIndex].id; //1,2,3,4...
+        console.log(clickedOpt);
+        if( clickedOpt>0 ){//entra si clickea un option,debido que si ya existe un option,
+                        //el primero comienza con id=1.
+            let valorRuta = parseFloat(rutas[clickedOpt-1].valor); //le resto 1 pq en la lista los id empiezan en cero
+            inpValor.value = `COP ${valorRuta*0.16+valorRuta + (valorRuta*0.04)}`; 
+    }
+    
+    }
+    //selectRutas.value = '';
+}
+
+//obtiene la informacion del cliente y la ruta para crear un card y mostrar el tiquete
+function infoTiquete(){
+    let cliente = selectClientes.value;
+    let ruta = selectRutas.value;
+    let valor = inpValor.value;
+
+    let cardContainer = document.createElement('div');
+    cardContainer.classList.add('card','text-bg-info','mb-3');
+    cardContainer.style = 'max-width:18rem';
+    cardContainer.style = 'margin:5px';
+    cardContainer.innerHTML = `<div class="card-header">
+                                    <h5 class="card-title">${ruta}</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>${cliente}</li>
+                                        <li>${valor}</li>
+                                    </ul>
+                                </div>`;
+    cards.appendChild(cardContainer);
+    selectClientes.selectedIndex = -1;
+    selectRutas.selectedIndex = -1;
+    inpValor.value = '';
+    
+    
+    //fidelizacion 
+    console.log(recorrer());
+    
+    if(recorrer() == recorrer1()){
+        console.log('ola');
+        //si el cliente ya existe, traiga los puntos que tiene en la lista
+        // sumele los nuevos y edite los puntos en la lista
+    }else{
+        let trFide = document.createElement('tr');
+        trFide.classList.add('table-active');
+        trFide.innerHTML = `<td>${cliente}</td>
+                        <td>Bucaramanga</td>
+                        <td>Bogota</td>`;
+        tbodyFide.appendChild(trFide);
+    }
+    console.log(recorrer1());
+}                                
+
+
+//funcion para reinicar los select y el input de la seccion de compra de tiquetes
+function resetTiquete(){
+    selectClientes.selectedIndex = -1;
+    selectRutas.selectedIndex = -1;
+    inpValor.value = '';
+}
 //MODULO 3********************************************************************
+
+//MODULO 4*********************************************************************
+//recorre los nombres de los clientes en la lista
+function recorrer(){
+    for(let i of person){
+        let clienteName = i.nombres + " " + i.apellidos;
+        return clienteName;
+    }
+}
+//recorre los nombres de los clientes en los tr del tbody de fidelizacion
+function recorrer1(){
+    for(let i; i<tbodyFide.children.length;i++){
+        return i//i.children[0];
+        // console.log(i);
+    }
+}
+// function fidelizacion(){
+//     console.log(infoTiquete());
+//     let trFide = document.createElement('tr');
+//     trFide.classList.add('table-active');
+//     trFide.innerHTML = `<td>${infoTiquete()}</td>
+//                     <td>Bucaramanga</td>
+//                     <td>Bogota</td>`;
+//     tbodyFide.appendChild(trFide);
+    
+// }
+
+
+
+//MODULO 4*********************************************************************

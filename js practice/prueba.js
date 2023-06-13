@@ -181,6 +181,25 @@ const filter = ['Manzana','Banano','Kiwi','Pera'];
 let prueba = filter.filter(fff = x => x.length>4); //función - (fff = x => x.length>4);
 console.log(prueba);
 
+//ejemplo2
+const resultados = [
+    {
+        camper:'millos',
+        calificacion:4.3
+    },
+    {
+        camper:'mario',
+        calificacion:3.3
+    },
+    {
+        camper:'lia',
+        calificacion:2.3
+    }
+]
+                        //filter(iterador=>condicion);
+let resultado = resultados.filter(nota => nota.calificacion>3.5);
+console.log(resultado);
+
 //indexOf method
 /*Devuelve la primera posición en la que aparezca el valor proporcionado por parametro
 si el resultado de busqueda no se encuentra retorna -1.
@@ -660,7 +679,7 @@ var person = {
     edad: 30,
     ciudad: "Madrid",
     saludar() {
-      console.log("Hola, soy " + this.nombre + "!");
+    console.log("Hola, soy " + this.nombre + "!");
     }
   };
 

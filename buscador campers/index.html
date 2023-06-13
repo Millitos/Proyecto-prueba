@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Buscador</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="gx-3 gy-2 align-items-center filasForm">
+                <!-- select nombres -->
+                <div class="col-3">
+                    <select class="form-select" id="nombre">
+                        <option value="">Campers</option>
+                    </select>
+                </div>
+                <!-- select edades -->
+                <div class="col-3">
+                    <select class="form-select" id="edad">
+                        <option value="">edad</option>
+                    </select>
+                </div>
+                <!-- select promedio minimo -->
+                <div class="col-3">
+                    <select class="form-select" id="minimo">
+                        <option value="">Pminimo</option>
+                        <option value="3.0">3.0</option>
+                        <option value="3.1">3.1</option>
+                        <option value="3.2">3.2</option>
+                        <option value="3.3">3.3</option>
+                        <option value="3.4">3.4</option>
+                        <option value="3.5">3.5</option>
+                        <option value="3.6">3.6</option>
+                        <option value="3.7">3.7</option>
+                        <option value="3.8">3.8</option>
+                        <option value="3.9">3.9</option>
+                        <option value="4.0">4.0</option>
+                        <option value="4.1">4.1</option>
+                        <option value="4.2">4.2</option>
+                        <option value="4.3">4.3</option>
+                        <option value="4.4">4.4</option>
+                        <option value="4.5">4.5</option>
+                        <option value="4.6">4.6</option>
+                        <option value="4.7">4.7</option>
+                        <option value="4.8">4.8</option>
+                        <option value="4.9">4.9</option>
+                        <option value="5.0">5.0</option>
+                    </select>
+                </div>
+                <!-- select promedio maximo -->
+                <div class="col-3">
+                    <select class="form-select" id="maximo">
+                        <option value="">Pmaximo</option>
+                        <option value="3.0">3.0</option>
+                        <option value="3.1">3.1</option>
+                        <option value="3.2">3.2</option>
+                        <option value="3.3">3.3</option>
+                        <option value="3.4">3.4</option>
+                        <option value="3.5">3.5</option>
+                        <option value="3.6">3.6</option>
+                        <option value="3.7">3.7</option>
+                        <option value="3.8">3.8</option>
+                        <option value="3.9">3.9</option>
+                        <option value="4.0">4.0</option>
+                        <option value="4.1">4.1</option>
+                        <option value="4.2">4.2</option>
+                        <option value="4.3">4.3</option>
+                        <option value="4.4">4.4</option>
+                        <option value="4.5">4.5</option>
+                        <option value="4.6">4.6</option>
+                        <option value="4.7">4.7</option>
+                        <option value="4.8">4.8</option>
+                        <option value="4.9">4.9</option>
+                        <option value="5.0">5.0</option>
+                    </select>
+                </div>
+                <!-- select para seleccionar un valor del nivel en campus-->
+                <div class="col-3">
+                    <select class="form-select" id="nivelCampus">
+                        <option value=""> Nivel campus</option>
+                        <option value="basico">Basico</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
+                </div>
+                <!-- select nivel de ingles -->
+                <div class="col-3">
+                    <select class="form-select" id="nivelIngles">
+                        <option value="">Nivel ingles</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="middle">Middle</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <!-- select especialidad -->
+                <div class="col-3">
+                    <select class="form-select" id="especialidad">
+                        <option value="">Especialidad</option>
+                        <option value="frontEnd">Front-End</option>
+                        <option value="backEnd">Back-End</option>
+                        <option value="fullStack">Full-Stack</option>
+                    </select>
+                </div>
+                <!-- select tecnologia q es experto -->
+                <div class="col-3">
+                    <select class="form-select" id="expertoTecnologia">
+                        <option value="">Tecnologia</option>
+                        <option value="html">HTML</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="node">Node Js</option>
+                        <option value="mongo">Mongo DB</option>
+                        <option value="php">Php</option>
+                        <option value="vue">Vue</option>
+                        <option value="asp">ASP.NET</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <!-- buscador -->
+        <div class="row">
+            <div class="col">
+                <section>
+                    <input type="text" id="search" placeholder="Busqueda por nombre">
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col modaltest">
+                <!-- modal init -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th>Foto Camper</th>
+                                            <th>Promedio</th>
+                                            <th>Especialidad</th>
+                                            <th>Experto Tec</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                        <!-- ingreso dinamico -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modaljob" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th>Foto Camper</th>
+                                            <th>Nombre</th>
+                                            <th>Detalles</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody-job">
+                                        <!-- ingreso dinamico -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="tarjetas" class="col tarjetas">
+                <!-- ingreso dinamico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="js/db.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
