@@ -798,3 +798,25 @@ console.log(conjunto);
 
 //vaciar conjunto
 conjunto.clear();
+
+//LOCAL STORAGE****************************************************************************************
+//SESSION STORAGE**********************************************************************************************
+//setItem() - establece o modifica el valor asociado pasado como segundo parametro a una clave
+// proporcionada como primer parametro - crea un key nuevo por aparte
+localStorage.setItem('nombre','millos');
+localStorage.setItem('apellido','Jinete Torres');
+
+//getItem() - devuelve el valor asociado a la clave proporcionada por parametro
+const nameT = localStorage.getItem('nombre');
+console.log(nameT); //millos
+
+//key() - devuelve el valor asociado a la clave proporcionada para parametro
+const keyTest = localStorage.key(0);
+console.log(keyTest); // apellido
+
+//removeItem() - devuelve el valor asociado a la clave proporcionada por parametro
+const keyRemoved = localStorage.removeItem('variable');
+console.log(keyRemoved); //undefined
+
+//clear() - elimina todas las claves y valores
+// localStorage.clear();

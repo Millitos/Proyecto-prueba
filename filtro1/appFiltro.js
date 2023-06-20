@@ -59,6 +59,7 @@ function agregarCliente(objCliente){
     
     listarClientesSelect();
     //console.log(listaClientes);
+    
 }
 
 //muestra los elementos en el html dinamicamente
@@ -185,7 +186,7 @@ btnBuscar.addEventListener('click', function(e){
     let nuevaListaClientes = [];
     listaClientes.forEach((cliente)=>{
         if(cliente.nit === searchInput.value || cliente.nombres === searchInput.value
-             || cliente.apellidos === searchInput.value){  
+            || cliente.apellidos === searchInput.value){  
             nuevaListaClientes.push(cliente);
         }
     });
@@ -439,3 +440,4 @@ function limpiarTablaFidelizacion(){
     const tbodyFidelizacion = document.querySelector("#tbody-fidelizacion");
     tbodyFidelizacion.innerHTML ="";
 }
+
