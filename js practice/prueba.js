@@ -375,6 +375,8 @@ for(let i in results) {
 //Para saber si un objeto tiene una propiedad
 console.log(results.hasOwnProperty(2)); 
 
+//OBJETO THIS - no entendi
+
 
 //CICLOS*********************************************************************************
 //while
@@ -799,6 +801,7 @@ console.log(conjunto);
 //vaciar conjunto
 conjunto.clear();
 
+/*
 //LOCAL STORAGE****************************************************************************************
 //SESSION STORAGE**********************************************************************************************
 //setItem() - establece o modifica el valor asociado pasado como segundo parametro a una clave
@@ -820,3 +823,16 @@ console.log(keyRemoved); //undefined
 
 //clear() - elimina todas las claves y valores
 // localStorage.clear();
+*/
+
+//HERENCIA
+function ppersona(nombre,apellidos,edad){
+    this.nombre = nombre +' '+ apellidos;
+    this.edad = edad;
+}
+
+ppersona.prototype.getEdad = function(){
+    console.log(this.nombre + 'tiene' + this.edad + 'anhos!');
+}
+
+
