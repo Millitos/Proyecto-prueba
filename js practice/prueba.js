@@ -741,11 +741,38 @@ class Libro {
 }
 
 const livro = new Libro('Franz Kafka');
-console.log(livro.autor); //getter
+//console.log(livro.autor); //getter
 
 livro.autor = 'Nietzsche'; //setter
 console.log(livro.autor);
 
+//extension de clases
+//1. creo la clase persona
+class Person{
+    constructor(nombre,apellidos,edad){
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+    }
+    saludar(){
+        return `Hola soy ${this.nombre} ${this.apellidos}`;
+    }
+    presentarse(){
+        return `Hola soy ${this.nombre} ${this.apellidos} y tengo ${this.edad} años`;
+    }
+}
+//2. creo una clase de tipo estudiante que hereda la clase persona
+class Estudiante extends Person{
+    saludar(){//sobrescribo el metodo inicialmente creado en la clase Person
+        return `Hola soy ${this.nombre} ${this.apellidos} y soy estudiante`;
+    }
+}
+//3. creo una nueva instancia
+var e1 = new Estudiante('Millos','Jinete Torres',23);
+//4. le pido que salude
+console.log(e1.saludar());
+//5. le pido que se presente
+console.log(e1.presentarse());
 
 //MAPS -son los equivalentes a diccionarios******************************************************
 //la diferencia entre un map y un objeto es q el map no tiene metodos
