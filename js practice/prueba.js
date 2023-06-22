@@ -683,7 +683,7 @@ var person = {
     saludar() {
     console.log("Hola, soy " + this.nombre + "!");
     }
-  };
+};
 
 console.log(person.nombre);  // Resultado: "Juan"
 console.log(person.edad);    // Resultado: 30
@@ -693,7 +693,7 @@ person.saludar();  // Resultado: "Hola, soy Juan!"
 
 person.profesion = "Ingeniero"; //añade elemento al obj
 person.cambiarCiudad = function(nuevaCiudad) { //añade un nuevo método
-  this.ciudad = nuevaCiudad;
+    this.ciudad = nuevaCiudad;
 };
 
 console.log(person.profesion);  // Resultado: "Ingeniero"
