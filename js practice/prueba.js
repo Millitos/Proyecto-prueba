@@ -741,7 +741,9 @@ class Libro {
 }
 
 const livro = new Libro('Franz Kafka');
-//console.log(livro.autor); //getter
+console.log(livro.autor); //getter
+
+console.log(livro._autor);
 
 livro.autor = 'Nietzsche'; //setter
 console.log(livro.autor);
@@ -766,6 +768,14 @@ class Estudiante extends Person{
     saludar(){//sobrescribo el metodo inicialmente creado en la clase Person
         return `Hola soy ${this.nombre} ${this.apellidos} y soy estudiante`;
     }
+    //Extensión a través de SUPER
+    //es posible llamar un método de una clase padre desde la extensión con la palabra reservada SUPER
+    presentarEstudiante(){ 
+        return super.presentarse();
+    }
+    metodoPrueba(){
+        return `Hola soy ${this.nombre}`;
+    }
 }
 //3. creo una nueva instancia
 var e1 = new Estudiante('Millos','Jinete Torres',23);
@@ -773,6 +783,11 @@ var e1 = new Estudiante('Millos','Jinete Torres',23);
 console.log(e1.saludar());
 //5. le pido que se presente
 console.log(e1.presentarse());
+//6. muestro el metodo extendido desde la clase Person
+console.log(e1.presentarEstudiante());
+
+console.log(e1.metodoPrueba());
+
 
 //MAPS -son los equivalentes a diccionarios******************************************************
 //la diferencia entre un map y un objeto es q el map no tiene metodos

@@ -1,0 +1,21 @@
+#opciones-container,#pregunta-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.row{
+    border: solid black 4px;
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgba(0,0,0,0.3);
+}
+
+.row,#opcionCorrectaContainer{
+    margin: 10px;
+}
+
+#header-preguntas{
+    display: flex;
+    justify-content: center;
+}
