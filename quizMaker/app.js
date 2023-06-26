@@ -39,15 +39,10 @@ const form = document.querySelector("#form-quiz");
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
-
     let Data = Object.fromEntries(new FormData(e.target));
-
     const ask = new Ask(Data.pregunta,Data.opcionCorrecta,Data.a,Data.b,Data.c,Data.d);
-
     askManager.addAsk(ask);
-
     showAsks();
-
     form.reset();
 })
 
