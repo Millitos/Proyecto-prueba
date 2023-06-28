@@ -16,10 +16,10 @@
 }
 
 .row,#opcionCorrectaContainer{
-    margin: 10px;
+    margin: 20px;
 }
 
-#header-preguntas{
+#header-preguntas, #header-quiz{
     display: flex;
     justify-content: center;
 }
@@ -28,4 +28,42 @@
     display: flex;
     align-items: flex-end;
 
+}
+
+#pregunta{
+    width: 90%;
+    display: block;
+    box-sizing: border-box;
+}
+
+#pregunta input,#inputOpcionCorrecta,#a,#b,#c,#d{
+    width: 100%;
+    
+}
+
+.li{
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+}
+
+.li button{
+    width: 10%;
+    margin: 5px;
+    overflow: hidden;
+}
+
+#opciones-container input{
+    margin: 5px;
+}
+
+button {
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #45a049;
 }

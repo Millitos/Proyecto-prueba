@@ -113,7 +113,8 @@ function borrarTweetLocalStorage(tweet){
     //funcion para eliminar una porcion de un string
                                 //(inicio,fin); corta lo que no este dentro del inicio y fin
     tweetBorrar = tweet.substring(0, tweet.length - 1);
-
+    // console.log(tweetBorrar);
+    // console.log(tweet);
     tweets = obtenerTweetsLocalStorage();
 
     //index guarda el indice del elemento eliminado

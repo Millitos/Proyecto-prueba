@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <title>Quiz</title>
 </head>
+
 <body>
+
+    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="indexQuiz.html">
+                <i class="bi bi-card-list"></i>
+                Ir al quiz
+            </a>
+        </div>
+    </nav>
 
     <div class="container">
         <form id="form-quiz">
             <div class="row">
                 <div id="pregunta-container" class="col">
                     <div id="pregunta">
-                        <label for="pregunta">Pregunta</label>
-                        <input type="text" name="pregunta" id="pregunta">
+                        <label for="preguntaa">Pregunta</label>
+                        <input type="text" name="pregunta" id="preguntaa">
                     </div>
                     <div id="btn-agregar">
                         <button type="submit" class="btn btn-outline-success">Agregar</button>
@@ -48,7 +62,7 @@
                             <label for="d">D</label>
                             <input type="text" name="d" id="d">
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </form>
@@ -62,7 +76,7 @@
 
             <div class="row">
                 <div class="col">
-                    <ol>
+                    <ol id="ask-list">
                         <!-- aki van las preguntas agg dinamicamente -->
                     </ol>
                 </div>
@@ -73,7 +87,11 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <!-- <script src="appQuiz.js"></script> -->
 </body>
+
 </html>
