@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded',function(e){
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
+    console.log(e.defaultPrevented); //true
+    // console.log(e.path); contiene una estructura arbol con la ruta desde el objeto window hasta el elemento que lanzó el evento
 
     if(editando){
         editAsk(identifier);
@@ -188,4 +190,8 @@ function deleteAskLocalStorage(askIndex){
     });
 
     localStorage.setItem('asks',JSON.stringify(asks));
+}
+
+function test(e){
+    console.log(e.clientX, e.clientY);
 }
