@@ -296,6 +296,7 @@ var object = {
     'numero de telefono':'3138678393'
 };
 
+//acceder a elementos del objeto
 console.log(object.peso);
 console.log(object["numero de telefono"]);
 console.log(object.edad);
@@ -335,7 +336,7 @@ var val = Object.values(results);
 console.log(val);
 
 //assign method 
-/*copia el objeto referenciado por el seguno parametro en el objeto referenciado
+/*copia el objeto referenciado por el segundo parametro en el objeto referenciado
 en el primer parametro y lo retorna */
 var copy = {};
 Object.assign(copy,results);
@@ -580,6 +581,18 @@ console.log(email);
 const {Millos:{old:EDAD, email:CORREO}} = user;
 console.log(EDAD);
 console.log(CORREO);
+
+//desestructurcion operador rest - el objeto mocho
+const superheroe = {
+    nombre:'señor patata',
+    edad:19,
+    peso:10,
+    empresa:'marvel'
+};
+
+let {nombre:nam, ...parametros} = superheroe;
+//ignora el valor de nam y toma el resto y lo convierte en un objeto
+console.log(nam, parametros);
 
 //desestructuracion de arrays
 var a;

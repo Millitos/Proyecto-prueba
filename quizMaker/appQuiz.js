@@ -14,9 +14,11 @@ function getAsksLocalStorage(){
     return asks;
 }
 
+
 document.addEventListener('DOMContentLoaded',function(e){
     console.log(localStorage.getItem('nombre'));
-
+    console.log(e.type); //retorna un string con el nombre del tipo de evento
+    console.log(e.defaultPrevented); 
     showQuiz();
 })
 
