@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <!-- objeto event -->
+    <div class="container">
+        <h1>Objeto event</h1>
+        <!-- target -->
+        <label for="input-test1">Pulse el botón</label>
+        <button id="btn-test1"  onclick="test1(event)">botón</button>
+        <br>
+        <br>
+
+        <!-- type -->
+        <label for="type-test">type property</label>
+        <button id="type-test">type</button>
+        <p id="p-type">
+        </p>
+
+        <label for="keydown-test">keydown</label>
+        <input type="text"  id="keydown-test">
+    </div>
+    
+    <script src="events.js"></script>
+</body>
+</html>
