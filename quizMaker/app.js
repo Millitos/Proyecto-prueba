@@ -1,3 +1,5 @@
+// export const LS= getAsksLocalStorage();
+
 var identifier = 0;
 let editando = false;
 

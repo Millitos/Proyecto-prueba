@@ -1,4 +1,7 @@
 //INDEXQUIZ******************************************************
+// import {LS} from "./app";
+
+
 function getAsksLocalStorage(){
     let asks;
 
@@ -23,7 +26,7 @@ function showQuiz(){
     let asks;
     let counter = 0;
 
-    asks = getAsksLocalStorage();
+    asks =  getAsksLocalStorage();
     console.log(asks);
     asks.forEach((ask)=>{
         counter++;
