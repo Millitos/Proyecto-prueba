@@ -1,12 +1,29 @@
 //distancias 
 
 export class Distance{
-    constructor(dMetros){
-        this._dMetros = dMetros;
+    constructor(dMetros,unit){
+        this._dMetros = parseFloat(dMetros);
+        this._unit = unit;
+        this._newD = 0;
+
+        switch (this._unit){
+            case 'pies':
+                this.pies(this._dMetros);
+                break;
+            case 'kilometros':
+                this.kilometros(this._dMetros);
+                break;
+            case 'centimetros':
+                this.centimetros(this._dMetros);
+        }
     }
 
-    get(){
+    get dMetros(){
         return this._dMetros;
+    }
+
+    get newD(){
+        return this._newD;
     }
     
     set(newDmetros){
@@ -14,14 +31,14 @@ export class Distance{
     }
 
     pies(dMetros){
-        return dMetros * 3.28084;
+        this._newD = dMetros * 3.28084;
     }
 
     kilometros(dMetros){
-        return dMetros/1000;
+        this._newD = dMetros/1000;
     }
 
     centimetros(dMetros){
-        return dMetros * 100;
+        this._newD = dMetros * 100;
     }
 }

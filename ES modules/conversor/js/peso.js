@@ -1,12 +1,27 @@
 //peso
 
 export class Weight{
-    constructor(pKilogramos){
-        this._pKilogramos = pKilogramos;
+    constructor(pKilogramos,unit){
+        this._pKilogramos = parseFloat(pKilogramos);
+        this._unit = unit;
+        this._newW = 0;
+
+        switch(this._unit){
+            case 'libras':
+                this.libras(this._pKilogramos);
+                break;
+            case 'gramos':
+                this.gramos(this._pKilogramos);
+                break;
+        }
     }
 
-    get(){
+    get pKilogramos(){
         return this._pKilogramos;
+    }
+
+    get newW(){
+        return this._newW;
     }
 
     set(newPkilogramos){
@@ -14,11 +29,11 @@ export class Weight{
     }
 
     libras(pKilogramos){
-        return pKilogramos * 2.20462;
+        this._newW = pKilogramos * 2.20462;
     }
 
     gramos(pKilogramos){
-        return pKilogramos * 1000;
+        this._newW = pKilogramos * 1000;
     }
 
 }

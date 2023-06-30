@@ -17,7 +17,8 @@ h1 {
   height: 140px;
   left: 0;
   letter-spacing: 5px;
-  margin: 0 0 0;
+  margin: 20px 20px;
+  /* margin-bottom: 20px; */
   /* position: absolute; */
   text-align: center;
   text-transform: uppercase;
@@ -100,14 +101,20 @@ section{
     padding: 5px;
     border-radius: 10px;
     box-shadow: 10px 10px #fafafa3a ;
+    margin: 10px;
 }
 
-#section-temperatura header h2,#section-peso header h2{
+#section-temperatura header h2,#section-peso header h2,#section-distancia header h2{
     display: flex;
     justify-content: center;
     
 }
 
-/* #temperatura{
-    
-} */
+#result-temp,#result-peso,#result-dist{
+  display: flex;
+  justify-content: center;
+  color: crimson;
+  font-size: 30px;
+  font-style: italic;
+  font-family: fantasy;
+}

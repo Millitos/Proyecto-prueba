@@ -1,12 +1,26 @@
 //temperaturas
 
 export class Temperature{
-    constructor(Tcelsius){
-        this._Tcelsius = Tcelsius;
+    constructor(Tcelsius,unit){
+        this._Tcelsius = parseFloat(Tcelsius);
+        this._unit = unit;
+        this._newT = 0;
+        switch(this._unit){
+            case 'kelvin':
+                this.kelvin(this._Tcelsius);
+                break;
+            case 'farenheit':
+                this.farenheit(this._Tcelsius);
+                break;
+        }
     };
 
-    get(){
+    get Tcelsius(){
         return this._Tcelsius;
+    }
+
+    get newT(){ 
+        return this._newT;
     }
 
     set(newTcelsius){
@@ -14,10 +28,10 @@ export class Temperature{
     }
 
     farenheit(Tcelsius){
-        return (Tcelsius * (9/5)) + 32;
+        this._newT = (Tcelsius * (9/5)) + 32;
     }
 
     kelvin(Tcelsius){
-        return Tcelsius + 273.15;
+        this._newT = Tcelsius + 273.15;
     }
 }

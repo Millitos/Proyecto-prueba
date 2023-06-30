@@ -16,18 +16,18 @@
 
     <div id="container-conversor" class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6 col-12">
                 <section id="section-temperatura">
                     <header>
-                        <h2>Temperaturas</h2>
+                        <h2>Temperatura</h2>
                     </header>
                     <div id="temperatura">
                         <label for="temp">Enter the temperature in Celsius</label>
                         <input type="number" id="temp" placeholder="°C">
                         <select  id="select-temp">
                             <option value="">Select an unit</option>
-                            <option value="farenheit">Farenheit</option>
-                            <option value="kelvin">Kelvin</option>
+                            <option value="farenheit">Farenheit[F]</option>
+                            <option value="kelvin">Kelvin[K]</option>
                         </select>
 
                         <p id="result-temp"></p>
@@ -35,17 +35,48 @@
                 </section>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6 col-12">
                 <section id="section-peso">
                     <header>
                         <h2>Peso</h2>
                     </header>
-                    <div id="peso">
-                        
+                    <div id="peso-container">
+                        <label for="peso">Enter the weight in Kilograms</label>
+                        <input type="number" id="peso" placeholder="Kg">
+                        <select  id="select-peso">
+                            <option value="">Select an unit</option>
+                            <option value="libras">Libras[Lb]</option>
+                            <option value="gramos">Gramos[gr]</option>
+                        </select>
+
+                        <p id="result-peso"></p>
                     </div>
                 </section>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <section id="section-distancia">
+                    <header>
+                        <h2>Distancia</h2>
+                    </header>
+                    <div id="distancia-container">
+                        <label for="distancia">Enter the distance in meters</label>
+                        <input type="number" id="distancia" placeholder="m">
+                        <select  id="select-distancia">
+                            <option value="">Select an unit</option>
+                            <option value="pies">Pies[ft]</option>
+                            <option value="kilometros">Kilometros[km]</option>
+                            <option value="centimetros">Centimetros[cm]</option>
+                        </select>
+
+                        <p id="result-dist"></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
