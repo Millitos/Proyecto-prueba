@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Carrito de compras</title>
+</head>
+<body>
+
+    <header id="tittle">
+        <h1>Tienda de don Lucho</h1>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <section id="product-section">
+                    <header id="product-header">
+                        <h2>Products</h2>
+                    </header>
+
+                    <div class="form-container">
+                        <form id="form-productos">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Product Name</label>
+                                <input type="text" name="name" class="form-control" id="name" name="name" placeholder="Ej:Rise,Bread,Meat,Milk...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="price" name="price">
+                            </div>
+                            <div class="mb-3">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="quantity" name="quantity">
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Add Product</button>
+
+                        </form>
+                    </div>
+                </div>
+
+                </section>
+                
+            <div class="col-6">
+                <div class="table-container ">
+                    <section id="bag-section " class="table-responsive">
+                        <header id="bag-header">
+                            <h2>Shopping Bag</h2>
+                        </header>
+
+                        <table class="table table-hover table-success table-striped margin:2px">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col"><i class="bi bi-trash-fill"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-products">
+                                <!-- agregados dinamicamente -->
+                            </tbody>
+                        </table>
+
+                        <button type="submit" class="btn btn-success" onclick="total(event)">Total</button>
+                        <p id="howmuch"></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
