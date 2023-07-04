@@ -21,8 +21,9 @@ function mostrarCampers(){
 mostrarCampers();
 nuevoCamper('lucas',mostrarCampers);
 
-//promises
-//1. definir la promesa
+//promises - la promesa es un contenedor para un valor futuro
+//1. definir la promesa         //función ejecutora(recibe dos funciones como argumentos)
+//los argumentos son los que resuelven o rachazan la promesa en función de si se provocó o no un error
 const premiarTribu = new Promise((resolve, reject)=>{
     //logica de la promesa
     const premio = true; //fulfilled
@@ -39,6 +40,16 @@ const premiarTribu = new Promise((resolve, reject)=>{
 //verificando los estados de la promesa
 console.log(premiarTribu);
 
+//cómo utilizar las promesas
+//1. invocar promesa
+premiarTribu
+    .then((result) =>{ //con then se gestiona el resolve
+        console.log(result); //true
+    })
+    .catch(error =>{ //con el catch se gestiona el reject
+        console.log(error); //false
+    })
+
 //estado pending promesa
 const pending = new Promise((resolve, reject)=>{
 
@@ -47,15 +58,7 @@ const pending = new Promise((resolve, reject)=>{
 console.log(pending);
 
 
-//como utilizar las promesas
-//1. invocar promesa
-premiarTribu
-    .then((result) =>{ //con then se gestiona el resolve
-        console.log(result);
-    })
-    .catch(error =>{ //con el catch se gestiona el reject
-        console.log(error);
-    })
+
 
 
 
@@ -68,13 +71,17 @@ function getData(){
     const url = 'data/data.txt'; //ruta 1.carpeta 2.nombre del recurso
     //si se escribe mal la url aparece el error 404
 
-    //2. pasar como argumento a fetch
+    //2. pasar la url como argumento a fetch
     fetch(url)
         //establecemos conectividad con el recurso web o servidor
         .then(respuesta=>{ //respuesta del servidor si hubo conectividad o no
             console.log(respuesta);
-            console.log(respuesta.status); //ese estado indica que hubo conexion con el recurso
-            console.log(respuesta.statusText); //confirmamos q si hubo conexion al servidor
+
+            //propiedades del objeto almacenado en respuesta
+            console.log(respuesta.status); //ese estado indica que hubo conexion con el recurso,si la petición fue exitosa
+                                            //retorna el valor 200, de lo contrario si hay un error retorna el valor 500
+            console.log(respuesta.statusText); //confirmamos q si hubo conexion al servidor, si la petición fue exitosa retorna "200 OK"
+                                                // de lo contrario, por falta de comunicación con el servidor retorna "404 Not Found"
             console.log(respuesta.url); //servidor
             return respuesta.text() //rta del servidor en formato de texto
         })
