@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
 body {
     background: #e96443;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
@@ -55,6 +62,7 @@ header h1 {
 #cargando img {
     display: none;
     margin: 0 auto;
+    width: 50%;
 }
 #resultado  {
     margin-bottom: 40px;
@@ -75,3 +83,14 @@ header h1 {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+#cotizar-seguro{
+    margin: 10px;
+}
+
+/* para centrar el row principal */
+/* #row1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

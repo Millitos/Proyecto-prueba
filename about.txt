@@ -51,3 +51,23 @@
 
 14. como gestionar un crud usando localStorage
     ->localStorage/061 formulario
+
+15. para centrar un elemento con clases de Bootstrap (mr-md-auto ml-md-auto)
+
+16. Para obtener el anio actual 
+    -> new Date().getFullYear();
+
+17. para recopilar la informacion de un formulario
+    -> Object.fromEntries(new FormData(e.target));
+
+18. para agregar mensajes en el HTML cuando se valida el formulario dependiendo,
+    si se lleno la informacion pedida o no.
+    ->Clases/cotizaSeguro/app.js
+    ->Estilos: Clases/cotizaSeguro/Css/custom.css (.error - .correcto)
+
+19. para seleccionar un elemento HTML que esta dentro de otro con querySelector
+    ->document.querySelector('#idElemento tag'); ('#cargando img');
+
+20. para mostrar un 'spinner', es como un gif que se carga mientras el js hace alguna operacion
+    ->Clases/cotizaSeguro/js/app.js (linea 105)
+    ->los estilos estan codificados en el archivo css con sus respectivas clases

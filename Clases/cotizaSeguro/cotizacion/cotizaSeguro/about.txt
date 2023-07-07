@@ -1,0 +1,23 @@
+1. Bootstrap class: mr-md-auto
+    ->La clase 'mr-md-auto' en Bootstrap es una clase utilitaria que se utiliza para 
+    aplicar márgenes automáticos a un elemento específico en el lado derecho (derecha)
+     en dispositivos de tamaño mediano (a partir del breakpoint md).
+
+     El prefijo mr en mr-md-auto es una abreviatura de "margin-right" (ml: margin left) que indica que 
+     se trata de una propiedad de margen derecho. El sufijo -md-auto es una clase 
+     modificadora de Bootstrap que se aplica solo en dispositivos de tamaño mediano y superiores.
+
+2. Bootstrap class: form-control(for inputs), form-label(for labels)
+    ->La clase form-control en Bootstrap se utiliza para aplicar estilos y comportamientos
+     predefinidos a los campos de entrada (<input>), áreas de texto (<textarea>) y 
+     elementos de selección (<select>) en formularios.
+
+3. tag HTML: fieldset
+    ->The <fieldset> tag is used to group related elements in a form.
+    The <fieldset> tag draws a box around the related elements.
+    ->The fieldset element represents a set of form controls optionally grouped under a common name.
+    -> puede ser basicamente para agrupar algunos inputs dentro de un formulario que tengan correlacion
+
+4. tag HTML: legend
+    ->La etiqueta <legend> define una leyenda para el elemento <fieldset>.
+    
