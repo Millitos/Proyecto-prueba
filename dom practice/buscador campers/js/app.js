@@ -42,7 +42,7 @@ function showCampers(campers){
         const camperHTML = document.createElement('p');
         camperHTML.style = "margin:5px";
         camperHTML.innerHTML = `<div class="card" style="width: 18rem;">
-                                    <img src="../img/${imagen}" class="card-img-top" alt="..." id="imgcard">
+                                    <img src="../../img/${imagen}" class="card-img-top" alt="..." id="imgcard">
                                     <div class="card-body">
                                         <h5 class="card-title">${nombre}</h5>
                                         <p class="card-text">${detalle}</p>
