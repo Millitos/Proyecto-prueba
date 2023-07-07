@@ -1,0 +1,53 @@
+1. La clase 'gx-3' en Bootstrap es una clase utilitaria que se utiliza para aplicar un espacio horizontal 
+    (espaciado) de tamaño 3 (en unidades relativas) entre elementos adyacentes en un contenedor.
+    ->dom practice/buscadorCampers/index.html (linea 18)
+
+2. Para centrar un elemento con CSS
+    .class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+3. Llenar dinamicamente valores en un elemento select HTML
+    ->dom practice/buscadorCampers/app.js (linea 5)
+
+4. Para buscar cualquier elemento dentro de una lista en funcion de varios atributos de ese elemento,
+    es decir puedo buscar empleados filtrando segun sus edades, cargos, experiencia y todos juntos.
+    ->dom practice/buscadorCampers/app.js (linea 86) 
+
+5. Para realizar un crud con Js(dom), con una lista para almacenar objetos, utilizando un objeto como
+    pivote para el manejo de cada elemento creado.
+    ->dom practice/crud js
+6. para realizar un crud con Js(dom), con una lista para almacenar objetos.
+    ->dom practice/crud js copy
+
+7. para setear todos los elementos del html inicialmente con estas condiciones de CSS
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+8. para validar que los inputs de un formulario tengan texto o esten llenos
+    ->dom practice/filtro1/appFiltro.js (linea 33)
+
+9. para saber cuando dentro de un formulario hay varios input typo button que button fue oprimido
+    segun el data-action de cada button. 
+    ->dom practice/peliculas/script.js (linea 23) o (linea 70)
+
+10. para evaluar varias opciones dentro de una clase con un switch segun un argumento ingresado en 
+    el metodo constructor
+    ->ES modules/conversor/js/distancia.js
+
+11. Ejercicio para gestionar toda una calculadora con una clase
+    ->Clases/calculadora
+
+12. para poner un titulo o un texto con sombra detras de cada letra con CSS
+    ->Clases/carritoCompras/style.css (#tittle)
+
+13. Para vincular la informacion de un JS con dos html distintos usando localStorage
+    ->localStorage/quizMaker
+
+14. como gestionar un crud usando localStorage
+    ->localStorage/061 formulario
