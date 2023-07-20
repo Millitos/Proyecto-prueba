@@ -71,3 +71,9 @@
 20. para mostrar un 'spinner', es como un gif que se carga mientras el js hace alguna operacion
     ->Clases/cotizaSeguro/js/app.js (linea 105)
     ->los estilos estan codificados en el archivo css con sus respectivas clases
+
+21. para crear una galeria de fotos didactica
+    ->documentos/programming/sass/galeria.js y _galeria.scss
+
+22. para hacer un scroll desde un link en el nav a una parte de la pagina de manera smooth
+    ->documentos/programming/sass/src/js/app.js
