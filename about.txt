@@ -19,6 +19,7 @@
 5. Para realizar un crud con Js(dom), con una lista para almacenar objetos, utilizando un objeto como
     pivote para el manejo de cada elemento creado.
     ->dom practice/crud js
+
 6. para realizar un crud con Js(dom), con una lista para almacenar objetos.
     ->dom practice/crud js copy
 
@@ -77,3 +78,18 @@
 
 22. para hacer un scroll desde un link en el nav a una parte de la pagina de manera smooth
     ->documentos/programming/sass/src/js/app.js
+
+23. para revisar si un elemento esta siendo visible en la ventana del navegador
+    ->documentos/programming/sass/src/js/app.js (api IntersectionObserver)
+
+24. delegation para saber si el elemento clickeado es el que necesito segun el tagName:
+    ->document.getElementById("contenedor-imagenes").addEventListener("click", function(event) {  
+        if (event.target.tagName === "IMG") {}})
+
+25. para reiniciar la informacion de la ventana html
+    -> window.location.reload();
+
+26. para mostrar en la ventana html una alerta creada con js cuando falta algun dato del formulario,
+    o cuando se agrega correctamente usando el formulario
+    ->Clases/calculoPresupuesto/app.js: function imprimirMensaje();
+    ->tambien para hacer que el alert perdure 3segundos con un setTimeout
