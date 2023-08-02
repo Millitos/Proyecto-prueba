@@ -1,0 +1,2 @@
+AJAX: Es una buena opcion para cargar informacion a una pagina web desde una base de datos
+    sin tener que recargar la pagina, se puede hacer con un boton.
