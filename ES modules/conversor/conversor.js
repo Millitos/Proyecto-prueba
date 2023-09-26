@@ -20,7 +20,7 @@ selectTemperatura.addEventListener('input',function(e){
         const temp = new Temperature(temperatureValue,unitSelected);
         
         pTemperatura.innerHTML = `${temp.newT} ${unitSelected}`;
-       
+    
         
         
     }

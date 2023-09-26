@@ -1,4 +1,5 @@
-//callbacks - se ejecutan al final de un proceso
+//callbacks - se ejecutan al final de un proceso - llama la funcion mostrarCampers cada vez que se agg un camper
+
 const campers = ['millos','mario','lia'];
 
 //funcion para anadir un camper
@@ -20,6 +21,14 @@ function mostrarCampers(){
 
 mostrarCampers();
 nuevoCamper('lucas',mostrarCampers);
+
+//ejemplo 2
+const ciudades = ['londres','bogota','medellin'];
+
+//inline callback   
+ciudades.forEach(function(ciudad){
+    console.log(ciudad);
+})
 
 //promises - la promesa es un contenedor para un valor futuro
 //1. definir la promesa         //función ejecutora(recibe dos funciones como argumentos)
@@ -55,17 +64,32 @@ premiarTribu
         console.log(error); //false
     })
 
-//estado pending promesa
+//estado pending promesa - le falta el then
 const pending = new Promise((resolve, reject)=>{
 
 })
 
 console.log(pending);
 
+//ejemplo 2 - el then se ejecuta despues del resolve, deben ir de la mano
+//se crea un promise suponiendo que voy a leer 5000 fotos de una rest api,el tiempo que tarde en
+//leer los datos es desconocido, se crea un promise que ejecute una vez que el resolve se haya terminado
+//es decir cuando las 'imagenes' se hayan cargado (cuando termine de leer los registros), en el then 
+//se escribe el codigo que debe hacer despues de cargar los registros
+const esperando = new Promise((resolve, reject)=>{
+    setTimeout(() => {//el settimeout simula el tiempo que demoraria en conectar con la api o db
+        resolve('se ejecuto correctly');
+    }, 5000);
+})
+
+esperando.then((mensaje)=>{
+    console.log(mensaje);
+})
 
 //Fetch API para consumir datos desde un txt...
 const loadTxtBtn = document.querySelector("#loadTxt");
 loadTxtBtn.addEventListener('click',getData);
+let nameTest;
 
 function getData(){
     //1.especificar url del recurso web

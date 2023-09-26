@@ -1,2 +1,21 @@
 AJAX: Es una buena opcion para cargar informacion a una pagina web desde una base de datos
     sin tener que recargar la pagina, se puede hacer con un boton.
+
+JS asincrono:En el codigo asynchronous puedes tener 2 lineas de cogido y la linea 2 
+    ejecutarse y finales antes que la linea 1 termine de hacerlo
+
+JS sincrono: en el codigo synchronous si tienes un programa de 2 lineas, la linea 2
+    no puede empezar sin haber terminado la linea 1. EJEMPLO:La fila del supermercado
+
+*La mayor parte de las veces que escribas codigo asincrono sera cuando interactuar con una API o REST API,
+    queremos que todo se ejecute mientras se termina de consumir la API. 
+    -Funciones para crear codigo asincrono: Callbacks, Promises, Asyn/Await.
+
+callback: una funcion que corre dentro de otra funcion para que se ejecute.
+
+promises: la promesa es un contenedor para un valor futuro.
+    el then se ejecuta despues del resolve, deben ir de la mano
+    se crea un promise suponiendo que voy a leer 5000 fotos de una rest api,el tiempo que tarde en
+    leer los datos es desconocido, se crea un promise que ejecute una vez que el resolve se haya terminado
+    es decir cuando las 'imagenes' se hayan cargado (cuando termine de leer los registros), en el then 
+    se escribe el codigo que debe hacer despues de cargar los registros
